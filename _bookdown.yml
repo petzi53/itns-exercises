@@ -1,5 +1,5 @@
-book_filename: "itns-solutions"
-repo: https://github.com/petzi53/itns-solutions/
+book_filename: "itns-exercises"
+repo: https://github.com/petzi53/itns-exercises/
 output_dir: _book
 delete_merged_file: true
 language:
