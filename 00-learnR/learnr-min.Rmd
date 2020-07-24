@@ -1,0 +1,41 @@
+---
+title: "Hello, Tutorial!"
+author: "Peter Baumgartner"
+output: 
+    learnr::tutorial:
+        progressive: true
+        allow_skip: true
+        theme: cerulean
+runtime: shiny_prerendered
+---
+
+```{r setup, include=FALSE}
+library(learnr)
+```
+
+
+
+## First Chapter
+
+### First Task
+
+This code computes the answer to one plus one, change it
+so it computes two plus two:
+
+```{r addition, exercise=TRUE}
+1 + 1
+```
+
+### Second Task
+
+```{r suctraction, exercise=TRUE}
+1 - 1
+```
+
+## Second Chapter
+
+### Third Task
+
+```{r multiplication, exercise=TRUE}
+1 * 1
+```

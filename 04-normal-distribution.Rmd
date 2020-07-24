@@ -1,0 +1,201 @@
+# Normal Distribution
+
+## Interactive Video {#chap04-video-research-fundamentals}
+
+
+## Glossary
+
+### Accordion {#chap04-glossary-accordion}
+
+<iframe src="https://peter.baumgartner.name/wp-admin/admin-ajax.php?action=h5p_embed&id=93" width="960" height="1849" frameborder="0" allowfullscreen="allowfullscreen"></iframe><script src="https://peter.baumgartner.name/wp-content/plugins/h5p/h5p-php-library/js/h5p-resizer.js" charset="UTF-8"></script>
+
+
+
+### Dialog Cards {#chap04-glossary-dialog-cards}
+
+
+
+### Drag words Part I {#chap04-glossary-drag-words-part1}
+
+
+
+### Drag words Part II {#chap04-glossary-drag-words-part2}
+
+
+
+### Flash Cards {#chap04-glossary-flash-cards}
+
+
+
+### Fill in the Blanks {#chap04-glossary-fill-in-the-blanks}
+
+
+
+## Reporting (Advanced Blank) {#chap04-reporting-advanced-blanks}
+
+
+
+## Quizzes and Assessment
+
+### Quiz 1 (Question Set) {#chap04-quiz-1}
+
+
+### Quiz 2 (Question Set) {#chap04-quiz-2}
+
+
+
+### Quiz 3 (Question Set) {#chap04-quiz-3}
+
+
+
+### Take-Home Messages (Summary) {#chap04-take-home}
+
+
+### Assessment (Question Set) {#chap04-assessment}
+
+
+## End-of-Chapter Exercises
+
+<!--
+### Personal remark
+
+This is still a working draft of the tutorial part itns-solutions. I have this chapter yet to align with the new approach in chapter 1 und 2. Interactive exercises developed with [H5P](https://www.h5p.org) are still missing in this version
+
+I have almost always used the original text for questions and answers. To indicate these quotes are the text passages written in italics and marked with bar on the left margin.
+
+As there are only few R calculations in this chapter I have added an additional challenge: Drawing a distribution for age at time of death. Data are taken from a html table on the web. This results in three different exercises:
+
+1. Getting data via web scraping and cleaning the data frame
+2. Getting data via Excel file and cleaning the data frame
+3. Displaying the distribution with the program package `ggplot2`
+
+
+
+-->
+## Find z scores
+
+> For a standardized exam of statistics skill, scores are normally distributed: μ = 80, σ = 5. Find each student’s _z_ score:
+
+a. Student 1: X = 80
+b. Student 2: X = 90
+c. Student 3: X = 75
+d. Student 4: X = 95
+
+
+The formula is $z = (X-μ)/σ$.
+
+```{r find-z-score}
+(80 - 80)/5 # a.
+(90 - 80)/5 # b.
+(75 - 80)/5 # c.
+(95 - 80)/5 # d.
+```
+
+a. $z = 0$
+b. $z = 2$
+c. $z = -1$
+d. $z = 3$
+
+## Find percentage of better students
+
+> For each student in Exercise 1, use R to find what percent of students did better. (Assume _X_ is a continuous variable.)
+
+I am using the `pnorm` command. You can get an explanation by using the help command `help(pnorm)` or `help(Normal)`:
+
+```{r percentage-better}
+## help(Normal)
+(1 - pnorm(0)) * 100
+(1 - pnorm(2)) * 100
+(1 - pnorm(-1)) * 100
+(1 - pnorm(3)) * 100
+```
+
+> Percent better: a. 50%; b. 2.28%; c. 84.1%; d. 0.1%.
+
+## Calculation of SE
+
+> Gabriela and Sylvia are working as a team for their university’s residential life program. They are both tasked with surveying students about their satisfaction with the dormitories. Today, Gabriela has managed to survey 25 students; Sylvia has managed to survey 36 students. The satisfaction scale they are using has a range from 1 to 20 and is known from previous surveys to have _σ_ = 5.
+
+### Estimation 1
+
+> No mathematics, just think: which sample will have the smaller SE: the one collected by
+Gabriela or the one collected by Sylvia?
+
+> Sylvia’s sample will have the smaller SE because she has collected a larger sample.
+
+### Estimation 2
+
+> When the two combine their data, will this shrink the SE or grow it?
+
+> Combining the two samples will yield a smaller SE.
+
+### Calculation 
+
+> Now calculate the SE for Gabriela’s sample, for Sylvia’s sample, and for the two samples
+combined.
+
+The formula is $SE = σ / \sqrt{N}$.
+
+```{r calculate-SE}
+5 / sqrt(25)
+5 / sqrt(36)
+5 / sqrt(25 + 36)
+```
+
+> For Gabriela, SE = 1; For Sylvia, SE = 0.83; Combined, SE = 0.64.
+
+### Is the sample size sufficient?
+
+> How big a sample size is needed? Based on the combined SE you obtained, does it seem like the residential life program should send Gabriela and Sylvia out to collect more data? Why or why not? This is a judgment call, but you should be able to make relevant comments. Consider not only the SE but the range of the measurement.
+
+> What sample size is sufficient is a judgment call, which we’ll discuss further in Chapter 10. For now we can note that the combined data set provides SE = 0.64, meaning that many repeated samples would give sample mean satisfaction scores that would bounce around (i.e., form a mean heap) with standard deviation of 0.64. Given that satisfaction has a theoretical range from 1 to 20, this suggests that any one sample mean will provide a moderately precise estimate, reasonably close to the population mean. This analysis suggests we have sufficient data, although collecting more would of course most likely give us a better estimate.
+
+## Nursing home and random sampling
+
+> Rebecca works at a nursing home. She’d like to study emotional intelligence amongst the seniors at the facility (her population of interest is all the seniors living at the facility). Which of these would represent random sampling for her study?
+
+> a) Rebecca will wait in the lobby and approach any senior who randomly passes by.
+> b) Rebecca will wait in the lobby. As a senior passes by she will flip a coin. If the coin lands heads she will ask the senior to be in the study, otherwise she will not.
+> c) Rebecca will obtain a list of all the residents in the nursing home. She will randomly select 10% of the residents on this list; those selected will be asked to be part of the study.
+> d) Rebecca will obtain a list of all the residents in the nursing home. She will randomly select 1% of the residents on this list; those selected will be asked to be part of the study.
+
+> c and d represent random sampling because both give each
+member of the population an equal chance to be in the study, and members of the sample are selected independently
+
+## Skewed distributions
+
+> Sampling distributions are not always normally distributed, especially when the variable measured is highly skewed. Below are some variables that tend to have strong skew.
+> a) In real estate, home prices tend to be skewed. In which direction? Why might this be?
+> b) Scores on easy tests tend to be skewed. In which direction? Why might this be?
+> c) Age of death tends to be skewed. In which direction? Why might this be?
+> d) Number of children in a family tends to be skewed. In which direction? Why might this be?
+
+> ad a) Home prices tend to be positively skewed (longer tail to the right), because there is a lower boundary of zero, but in effect no maximum—typically a few houses have extremely high
+prices. These form the long upper tail of the distribution.
+
+> ad b) Scores on an easy test tend to be negatively skewed (longer tail to the left). If the test is very easy, most scores will be piled up near the maximum, but there can still be a tail to the left representing a few students who scored poorly.
+
+> ad c) Age at time of death tends to be negatively skewed (longer tail to the left). Death can strike at any time (☹), leading to a long lower tail; however, many people (in wealthy countries) die at around 70–85 years old, and no one lives forever, so the distribution is truncated at the upper end.
+
+Searching for “distribution of age at death”, or similar, will find you graphs showing this
+strong negative skew.
+
+What follows are two examples for this negatively skewed distributions of age at time of death:
+
+![**Figure 1:** Celebrities death recorded by wikipedia: https://medium.com/@chris.wallace/was-2016-an-especially-bad-year-for-celebrity-deaths-40030e611f4f](img/distribution-of-age-at-death-min.png)
+
+![**Figure 2:** US-Distribution 2013 of age at time of death: https://www.quora.com/What-is-the-most-common-age-to-die-in-America](img/distribution-of-age-at-time-of-death-min.png)
+
+
+> ad d) Number of children in a family tends to be positively skewed (longer tail to the right)
+because 0 is a firm minimum, and then scores extend upward from there, with many families
+having, say, 1–4 children and a small number of families having many children.
+
+## Warning sign for skewed variables
+
+> Based on the previous exercise, what is a caution or warning sign that a variable will be highly skewed?
+
+> Anything that limits, filters, selects, or caps scores on the high or low end can lead to skew. Selection is not the only thing that can produce skew, but any time your participants have been subjected to some type of selection process you should be alert to the possibility of skew in the variables used to make the selection (and in any related variables). 
+
+> Also, if the mean and median differ by more than a small amount, most likely there is skew, with the mean being “pulled” in the direction of the longer tail.
+

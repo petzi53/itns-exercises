@@ -1,0 +1,154 @@
+---
+title: "itns Chapter 05"
+author: "Peter Baumgartner"
+date: "`r Sys.Date()`"
+output:
+  html_notebook:
+    theme: cerulean
+    css: "../css/mystyle.css"
+    fig_caption: yes
+    number_sections: yes
+    pandoc_args: --number-offset=0,0
+    toc: yes
+    toc_depth: 6
+  word_document:
+    toc: yes
+    toc_depth: '6'
+  pdf_document:
+    pandoc_args: --number-offset=0,0
+    toc: yes
+    toc_depth: '6'
+    fig_caption: yes
+    latex_engine: xelatex
+  github_document:
+    toc: yes
+    toc_depth: 6
+  html_document:
+    theme: cerulean
+    css: "../css/mystyle.css"
+    fig_caption: yes
+    keep_md: yes
+    number_sections: yes
+    pandoc_args: --number-offset=0,0
+    toc: yes
+    toc_depth: 6
+---
+# Setup
+
+## Global options
+
+```{r label = "global-options", highlight=TRUE}
+
+### setting up working environment
+### for details see: https://yihui.name/knitr/options/
+knitr::opts_chunk$set(
+        echo = T,
+        message = T,
+        error = T,
+        warning = T,
+        comment = '##',
+        highlight = T,
+        prompt = T,
+        strip.white = T,
+        tidy = T
+        )
+
+```
+
+## Installing and loading R packages
+
+
+```{r installing-and-loading-R-packages}
+
+### accompanying R package: https://github.com/gitrman/itns
+if (!require("itns"))
+        {remotes::install_github("gitrman/itns", 
+                         build = TRUE, build_opts = c("--no-resave-data", "--no-manual"))
+        library("itns")}
+
+### https://www.tidyverse.org/
+if (!require("tidyverse"))
+        {install.packages("tidyverse", repos = 'http://cran.wu.ac.at/')
+        library(tidyverse)}
+
+### above command installed and loaded the core tidyverse packages:
+# ggplot2: data visualisation
+# tibble:  a modern take on data frames
+# tidyr:   data tidying
+# readr:   data import (csv, tsv, fwf)
+# purrr:   functional R programming
+# dplyr:   data (frame) manipulation
+# stringr: string manipulation
+# forcats: working with categorial varialbes
+
+```
+
+## Theme adaption for the graphic display with `ggplot2`
+
+```{r generate-my-own-theme}
+
+my_theme <- theme_light() +
+        theme(plot.title = element_text(size = 10, face = "bold", hjust = 0.5))
+        theme(plot.background = element_rect(color = NA, fill = NA)) +
+        theme(plot.margin = margin(1, 0, 0, 0, unit = 'cm'))
+```
+
+
+# End-of-Chapter Exercises
+
+## ACT score at a certain college
+
+A student wants to know the average ACT score at her college (the ACT is a standardized collegereadiness
+exam taken by many U.S. students). She surveys 9 students and get the following data:
+
+Student | ACT
+--------|--------
+1 | 26
+2 | 34
+3 | 21
+4 | 26
+5 | 23
+6 | 24
+7 | 15
+8 | 18
+9 | 21
+
+### Given 𝜎: Calculate MoE and 95% CI
+
+Nationally, for ACT scores, σ = 5. Using this knowledge, calculate MoE and the 95% CI for
+this sample to estimate the average ACT score at this college.
+
+We are assuming that the data are normally distributed. We know that n = 9 and σ = 5. 
+We are going to use the R function `qnorm` for the normal distribution. 
+
+```{r sigma-given}
+
+n = 9   # number of data records manuall or with r: "n = length(<variableName>)"
+s = 5   # sigma (given)
+CI = .95 # confidence intervall
+
+## 1. First of all we need to get the data into a variable:
+ACT <- c(26,34,21,26,23,24,15,18,21)
+
+## 2. Now we can calculate the mean M
+M <- mean(ACT)
+M
+
+## 3. CI = 95% for both sides. One side:
+a <- 1 - (1-CI)/2
+
+## 4. calculate margin of error (MoE) when 𝜎 is given:
+MoE <- qnorm(a) * (s/sqrt(n))
+MoE
+
+## 5. calculate the CI extensions: The 95% CI extends MoE either side of M, so it is [M – MoE, M + MoE].
+left  <- M - MoE
+right <- M + MoE
+left
+right
+
+```
+
+Our level of certainty about the true mean is 95% in predicting that the true mean is within the interval between `r round(left,1)` and `r round(right,1)` assuming that the original random variable is normally distributed, and the sample data are independent.
+
+Using σ = 5 we obtain: M = `r round(M,1)`, 95% CI [`r round(left,1)`, `r round(right,1)`], MoE = `r round(MoE,1)`.

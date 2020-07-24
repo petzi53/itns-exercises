@@ -1,0 +1,91 @@
+
+## General Setup {-}
+
+**Global Options**
+
+
+
+
+```{r label = "global-options", highlight=TRUE, collapse=TRUE}
+
+### setting up working environment
+### for details see: https://yihui.name/knitr/options/
+knitr::opts_chunk$set(
+        collapse = T,
+        echo = T,
+        message = T,
+        error = T,
+        warning = T,
+        comment = '##',
+        highlight = T,
+        prompt = F,
+        strip.white = T,
+        tidy = T
+        )
+
+```
+
+
+**Installing and loading R packages**
+
+
+```{r installing-and-loading-R-packages}
+
+### accompanying R package: https://github.com/gitrman/itns
+if (!require("itns"))
+        {remotes::install_github("gitrman/itns", 
+                         build = TRUE, build_opts = c("--no-resave-data", "--no-manual"))
+        library("itns")}
+
+
+### https://www.tidyverse.org/
+if (!require("tidyverse"))
+        {install.packages("tidyverse", repos = 'http://cran.wu.ac.at/')
+        library(tidyverse)}
+
+### above command installed and loaded the core tidyverse packages:
+# ggplot2: data visualisation
+# tibble:  a modern take on data frames
+# tidyr:   data tidying
+# readr:   data import (csv, tsv, fwf)
+# purrr:   functional R programming
+# dplyr:   data (frame) manipulation
+# stringr: string manipulation
+# forcats: working with categorial varialbes
+
+
+### to calculate mode:
+if (!require("modeest"))
+        {install.packages("modeest", repos = 'http://cran.wu.ac.at/')
+        library(modeest)}
+
+# I am going to use the `janitor` package for calculating table totals
+if (!require("janitor"))
+        {install.packages("janitor", repos = 'http://cran.wu.ac.at/')
+        library(janitor)}
+
+### install "checkr" to test code submissions in learnr (and potentially other) tutorials
+### there is also a problem in line 639 in "vignettes/checkr.Rmd"
+### I have changed version hoping that 0.6 is unsensible to the "older" CRAN version (0.4) and does not update
+if (!require("checkr"))
+        {remotes::install_github("petzi53/checkr2", 
+                                 build = TRUE, build_opts = c("--no-resave-data", "--no-manual"))
+        library(checkr)}
+
+if (!require("itns"))
+        {remotes::install_github("gitrman/itns", 
+                         build = TRUE, build_opts = c("--no-resave-data", "--no-manual"))
+        library("itns")}
+
+
+```
+
+**Theme adaption for the graphic display with `ggplot2`**
+
+```{r generate-my-own-theme}
+
+my_theme <- theme_light() +
+        theme(plot.title = element_text(size = 10, face = "bold", hjust = 0.5)) +
+        theme(plot.background = element_rect(color = NA, fill = NA)) +
+        theme(plot.margin = margin(1, 0, 0, 0, unit = 'cm'))
+```

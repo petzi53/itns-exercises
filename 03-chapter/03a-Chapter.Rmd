@@ -1,0 +1,169 @@
+---
+title: "itns Chapter 03a"
+author: "Peter Baumgartner"
+date: "`r Sys.Date()`"
+output:
+  pdf_document:
+    pandoc_args: --number-offset=0,0
+    toc: yes
+    toc_depth: '6'
+    latex_engine: xelatex
+  word_document:
+    toc: yes
+    toc_depth: '6'
+  html_notebook:
+    theme: cerulean
+    css: "../css/mystyle.css"
+    fig_caption: yes
+    number_sections: yes
+    pandoc_args: --number-offset=0,0
+    toc: yes
+    toc_depth: 6
+  github_document:
+    toc: yes
+    toc_depth: 6
+  html_document:
+    theme: cerulean
+    css: "../css/mystyle.css"
+    fig_caption: yes
+    keep_md: yes
+    number_sections: yes
+    pandoc_args: --number-offset=0,0
+    toc: yes
+    toc_depth: 6
+---
+
+# Setup
+## Global options
+
+```{r label = "global-options", highlight=TRUE}
+
+### setting up working environment
+### for details see: https://yihui.name/knitr/options/
+knitr::opts_chunk$set(
+        echo = T,
+        message = T,
+        error = T,
+        warning = T,
+        comment = '##',
+        highlight = T,
+        prompt = T,
+        strip.white = T,
+        tidy = T
+        )
+
+```
+
+## Installing and loading R packages
+
+
+```{r installing-and-loading-R-packages}
+
+### accompanying R package: https://github.com/gitrman/itns
+if (!require("itns"))
+        {remotes::install_github("gitrman/itns", 
+                         build = TRUE, build_opts = c("--no-resave-data", "--no-manual"))
+        library("itns")}
+
+
+### https://www.tidyverse.org/
+if (!require("tidyverse"))
+        {install.packages("tidyverse", repos = 'http://cran.wu.ac.at/')
+        library(tidyverse)}
+
+### above command installed and loaded the core tidyverse packages:
+# ggplot2: data visualisation
+# tibble:  a modern take on data frames
+# tidyr:   data tidying
+# readr:   data import (csv, tsv, fwf)
+# purrr:   functional R programming
+# dplyr:   data (frame) manipulation
+# stringr: string manipulation
+# forcats: working with categorial varialbes
+
+# 
+# ### to calculate mode:
+# if (!require("modeest"))
+#         {install.packages("modeest", repos = 'http://cran.wu.ac.at/')
+#         library(modeest)}
+# 
+# # I am going to use the `janitor` package for calculating table totals
+# if (!require("janitor"))
+#         {install.packages("janitor", repos = 'http://cran.wu.ac.at/')
+#         library(janitor)}
+
+```
+
+## Theme adaption for the graphic display with `ggplot2`
+
+```{r generate-my-own-theme}
+
+my_theme <- theme_light() +
+        theme(plot.title = element_text(size = 10, face = "bold", hjust = 0.5))
+        theme(plot.background = element_rect(color = NA, fill = NA)) +
+        theme(plot.margin = margin(1, 0, 0, 0, unit = 'cm'))
+```
+
+
+# Following the Book Text
+
+## Get Data
+
+We are going to use the transcription data of the laptop group from the pen_laptop1 data set which is included in the `itns`-package. This package is already installed and loaded. At first we need to get an idea of the structure of this data set.
+
+```{r show-data-structure}
+str(pen_laptop1)
+```
+
+We see that we have 65 observations with 2 variables. With RStudio you can get a more inuitive look at the data with the command `View(pen_laptop1)`. You will get additional information when you hover with your cursor over the column names.
+
+We only need the data from the group "Laptop". To do this we have different possibilities:
+
+* **Subsetting operators:** This is very powerful and fast feature to express complex operations in R. Subsetting is a natural complement of the `str()` command, we have been used above. 
+* **Subset function:** Another possibility is the subset function which returns a subsets of vectors which meet certain conditions.
+* **Using dplyr:** `dplyr` (speak "dipleyer") is a very important and popular package for data manipulation. It is included in the `tidyverse` package collection, which we already have installed and loaded. It is more intuitive than subsetting but it is not basic R and needs therefore to install and to load an extra package.
+
+```{r get-data}
+laptop1_1 <- pen_laptop1[ which(pen_laptop1$group=='Laptop'), ]
+## is the same as:
+laptop1_2 <- subset(pen_laptop1, group == "Laptop")
+laptop1_3 <- dplyr::filter(pen_laptop1, group == "Laptop")
+```
+
+## Dot Plots
+
+As far as I know there is no possibility to generate a simple dot plot as in Panel on page 46 of the book. The nearest solution are short lines (instead of dots) generated with `geom_rug` to visualize where each data point is on the x axis. 
+
+```{r draw-rug}
+plot <- ggplot(laptop1_1, aes(x = transcription)) # we will use this line for the following 4 plots
+plot + geom_rug()
+```
+
+This plot is unsatisfactory as it is too high because it has its relevant information only at the bottom. But to reduce the height of the plot will also shorten the "rug" lines. `geom_rug()` is normally used in conjunction with other data as is shown in the next plot.
+
+If you really want to use just `geom_rug()` than you have to resize the image with your favorite photo/image manager.
+
+```{r dot-plot-first-try}
+plot + geom_dotplot() + geom_rug()
+```
+
+I have used the minimum of commands to get a dot plot. R outputs a warning message:
+
+
+As you can see the result is similar but still a little different as Panel B of page 46 in the book. The reason is the bindwidth chosen. With the next plot I have played with the binwidth to get almost the same plot as in the book. Besides I have also used other ggplot2 commands to get a publishing quality without further manually manipulation.
+
+```{r dot-plot-final, fig.height=1.5, fig.width=7}
+
+plot + geom_dotplot(binwidth = .7) + # set binwidth to get a similar result as in the book
+  geom_rug() +  # display exact values of individual cases
+  my_theme +    # use my own theme with white background
+  scale_y_continuous(breaks = NULL) + # remove tick markers of y axis
+  scale_x_continuous(breaks = seq(0, 40, 5)) + # set tick markers every 5
+  theme(axis.title.y = element_blank()) +      # remove name of y axis (= count)               
+  theme(panel.grid.major.x = element_line(size=0.5)) # set grid line every 5
+```
+
+## Frequency Histograms
+
+
+

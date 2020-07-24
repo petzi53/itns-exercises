@@ -1,0 +1,104 @@
+/* From style.css - where this file comes from?
+https://github.com/rstudio/bookdown/blob/master/inst/examples/css/style.css
+url and color for background image is adapted and .rmdsuccess is added!
+also changed some names: warning -> danger; caution -> warning
+alert-link alsdo added
+*/
+
+
+.alert-link {
+    font-weight: 700;
+}
+
+.rmdwarning, .rmdinquiry, .rmddownload, .rmdinfo, .rmddanger, .rmdchecklist {
+  padding: 1em 1em 1em 4em;
+  margin-bottom: 10px;
+/*  background: #f5f5f5 5px center/3em no-repeat; */
+}
+
+.rmdchecklist {
+  background: #D4EDDA 5px center/3em no-repeat;
+  background-image: url("../img/bookdown/icons/icons8-checkmark-64-min.png");
+}
+
+.rmdwarning {
+  background: #FFF3CD 5px center/3em no-repeat;
+  background-image: url("../img/bookdown/icons/icons8-error-40-min.png");
+}
+.rmdinquiry {
+  background: #E2E3E5 5px center/3em no-repeat;
+  background-image: url("../img/bookdown/icons/icons8-book-50-min.png");
+}
+.rmddownload {
+  background: #D1ECF1 5px center/3em no-repeat;
+  background-image: url("../img/bookdown/icons/icons8-download-from-the-cloud-40-min.png");
+}
+.rmdinfo {
+  background: #CCE5FF 5px center/3em no-repeat;
+  background-image: url("../img/bookdown/icons/icons8-info-64-min.png");
+}
+.rmddanger {
+  background: #F8D7DA 5px center/3em no-repeat;
+  background-image: url("../img/bookdown/icons/icons8-stop-sign-40-min.png");
+}
+
+/* ++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+
+caption {
+  color: #777;
+  margin-top: 10px;
+}
+p code {
+  white-space: inherit;
+}
+pre {
+  word-break: normal;
+  word-wrap: normal;
+}
+pre code {
+  white-space: inherit;
+}
+
+/***********************************************/
+/* My changes */
+
+blockquote {
+    padding: 10px 20px;
+    margin: 0 0 20px;
+    font-size: 14px;
+    font-style: italic;
+    border-left: 5px solid #1F9DE5}
+
+.right {
+    float: right;
+    width: 25%;
+}
+
+/************************
+Change width of sidebar
+see: https://stackoverflow.com/questions/51805885/r-bookdown-customize-width-of-toc-sidebar
+***********************/
+
+.book .book-summary {
+  width: 350px;
+  position:absolute;
+  top:0;
+  left:-350px;
+}
+
+.book.with-summary .book-header.fixed {
+    left: 350px;
+}
+
+.book.with-summary .book-body  {
+    left: 350px;
+}
+
+/************************
+Change width of text
+see: https://stackoverflow.com/questions/47065105/custom-css-to-change-bookdown-page-width
+***********************/
+
+.book .book-body .page-wrapper .page-inner {
+  max-width: 960px !important;
+}

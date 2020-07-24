@@ -1,0 +1,199 @@
+# Normal distribution (outsourced)
+
+## Additional challenge:
+
+Both graphs above are calculated from data. The first one from [data on wikipedia](https://en.wikipedia.org/wiki/Lists_of_deaths_by_year) using python, the second one used [data from a life table](https://www.ssa.gov/oact/STATS/table4c6_2013.html) of the US social security administration.
+
+This opens up three questions for exercises:
+
+1. How to get data from websites 
+2. How to get from Excel sheets not especially prepared?
+2. How to draw these above distributions?
+
+
+## Getting data from a table on a web page
+
+### Get table data with web scraping
+
+To get data from web pages is called **web scraping**. You will find with a search term line "R web scraping" many articles, tutorial and videos how to do it. Here I am going to use a [blog post by Cory Nissen](http://blog.corynissen.com/2015/01/using-rvest-to-scrape-html-table.html). 
+
+We are going to use the R package `rvest` to write an appropriate script. 
+
+Look at the [US period life table from 2016](https://www.ssa.gov/oact/STATS/table4c6.html): How to get the necessary data for the updates graph of figure 2?
+
+
+
+
+```{r scrap-web-table}
+# install/load package `rvest`
+if (!require("rvest"))
+        {install.packages("rvest", repos = 'http://cran.wu.ac.at/')
+        library(rvest)}
+
+# store the web url of the page with the table you are interested in
+url <- "https://www.ssa.gov/oact/STATS/table4c6.html"
+life_table_2016 <- url %>%
+  read_html() %>% # from package xml2
+  ## 1) go to webpage via google chrome
+  ## 2) set cursor on start of the desired table data
+  ## 3) right clicked and chose “inspect element”
+  ## 4) look for the appropiate line <table …> in the inspector (typically some lines above)
+  ## 5) select this <table …> line in the inspector
+  ## 6) right click it and select "Copy -> Copy XPath"
+  ## 7) include the copied XPath into next line of the R script
+  html_nodes(xpath='//*[@id="content"]/section[2]/div/div[3]/table') %>%
+  html_table(fill = TRUE)
+life_table_2016 <- life_table_2016[[1]]
+```
+
+To clarify how to get the correct XPath data compare the following screenshots:
+
+![**Screenshot 1:** Steps 1-3 of web scraping: Set cursor on start of the desired table data, click right mouse button to get the context menue and chose 'inspect element' ](img/Webscrape/Webscrape-1-min.png)
+
+<br /><br />
+
+![**Screenshot 2:** Step 4 of web scraping: look for the appropiate line <table …> in the inspector (typically some lines above)](img/Webscrape/Webscrape-2-min.png)
+
+<br /><br />
+![**Screenshot 3:** Step 5 of web scraping: select this <table …> line in the Google Chrome inspector and the complete table on the web page will be selected](img/Webscrape/Webscrape-3-min.png)
+<br /><br />
+
+![**Screenshot 4:** Step 6 of web scraping: right click it and select from the context menue "Copy -> Copy XPath"](img/Webscrape/Webscrape-4-min.png)
+<br /><br />
+
+### Copy table data into a Excel sheet
+
+Another simple way is to 
+
+1. select the table on the web page (without header and footnotes)
+2. copy it into the clipboard
+3. fire up Excel
+4. set the cursor of the first cell of an empty Excel sheet
+5. paste the content of the clipboard into the Excel sheet
+6. save the data as a .csv file in your appropriate RStudio project folder
+
+<div class="alert alert-info" role="alert">
+**Note:** In order to save the data in the correct format you must use the (american) number format with ',' as grouping character and '.' as the decimal character.
+</div>
+
+
+
+## Tidy data
+
+### Tidy data frame from web scraping
+
+Looking at the start and tail of the table we see that we need to make the following changes:
+
+1) We only need column 1, 3 and 6 for displaying the age distribution at time of the deaths. 
+2) We need to delete the first and last row as it includes textual header information.
+3) We need to convert the character columns into columns containing numbers.
+3) We need to calculate the number of death from the survival numbers.
+
+```{r tidy-life-table}
+# Looking at start and end of table
+head(life_table_2016)
+tail(life_table_2016)
+
+# We only need column 1, 3 and 6  and have to delete the last (text) line
+life_table_2016_v2 <- life_table_2016[c(-1,-nrow(life_table_2016)), c(1,3,6)]
+
+# We need to convert the character columns into columns containing numbers
+# In the columns with big number we have additionally to delete all commas from the strings
+life_table_2016_v2$`Exact age` <- as.numeric(life_table_2016_v2$`Exact age`)
+life_table_2016_v2$Male <- as.numeric(gsub(",","",life_table_2016_v2$Male))
+life_table_2016_v2$Female <- as.numeric(gsub(",","",life_table_2016_v2$Female))
+
+
+# We calculate the difference between rows
+life_table_2016_v3 <-
+  abs(tail(life_table_2016_v2[, -1], -1) - head(life_table_2016_v2[, -1], -1))
+names(life_table_2016_v3)[1] <- "MaleDeath"
+names(life_table_2016_v3)[2] <- "FemaleDeath"
+
+# To bind the two data frames we need the same number of rows
+firstLine <- data.frame(0,0)
+names(firstLine)[1] <- "MaleDeath"
+names(firstLine)[2] <- "FemaleDeath"
+
+life_table_2016_v3 <- rbind(firstLine, life_table_2016_v3)
+lifetable_final <- cbind(life_table_2016_v2, life_table_2016_v3)
+
+# For easier access change variable name 'Exact age' to 'age'
+names(lifetable_final)[1] <- "age" 
+```
+
+
+### Tidy data from Excel sheet
+
+We need to inspect and tidy our .csv file. Follow the procedure below:
+
+1) Click in RStudio project folder the .csv file name and select "View File" from the drop down menu which appears under your cursor
+
+![**Screenshot 5:** Step 1 to tidy the Excel sheet: Click the .csv filename from RStudio in your project folder and select "View File" from the drop down menue](img/Lifetable/Lifetable-1-min.png)
+<br /><br />
+
+2) Insert a new line (row) at the top of the file and add column names as I did. Save the file.
+
+![**Screenshot 6:** Step 2 to tidy the Excel sheet: Insert a new line (row) at the top of the file and add column names as in the screenshot](img/Lifetable/Lifetable-2-min.png)
+<br /><br />
+
+3) Click another time of the now changed .csv file name in your RStudio project folder: The same drop down menu opens up as before. This time select "Import Dataset…"
+
+![**Screenshot 7:** Step 3 to tidy the Excel sheet: Click the filename in your RStudio project folder and choose "Import Dataset…" from the drow down menue which appears under your cursor.](img/Lifetable/Lifetable-3-min.png)
+<br /><br />
+
+4) A overlay window to import text data appears. But the format of the data are not correct. The reason is that we have to change the delimiter from comma to semicolon.
+
+![**Screenshot 8:** Step 4 to tidy the Excel sheet: Change the delimiter parameter from comma to semicolon separated.](img/Lifetable/Lifetable-4-min.png)
+<br /><br />
+
+5) Now you can see the table in the correct format. In the window in the right corner you can also see the R code which generated after you click the button "Import". You can use the next time this code as a template for the automatic import via R script.
+
+![**Screenshot 9:** Step 5 to tidy the Excel sheet: The table is now in the correct format and you can click "Import".](img/Lifetable/Lifetable-5-min.png)
+<br /><br />
+
+6) You can now inspect the data in a new tab in your code window. In the console window you can also check for the applied source code and the generated messages. You will see how the package `readr` has the data parsed and estimated the column specification.
+
+![**Screenshot 9:** Step 6 to tidy the Excel sheet: Inspecting the data in a new tab in your RStudio code window](img/Lifetable/Lifetable-6-min.png)
+<br /><br />
+
+
+```{r tidy-life-table-2}
+# load .csv file into variable
+lifetable <- read_delim("lifetable.csv", ";", escape_double = FALSE, trim_ws = TRUE)
+
+# We only need column 1, 3 and 6
+lifetable_v2 <- lifetable[, c(1,3,6)]
+
+# We calculate the difference between rows
+lifetable_v3 <-
+  abs(tail(lifetable_v2[, -1], -1) - head(lifetable_v2[, -1], -1))
+names(lifetable_v3)[1] <- "MaleDeath"
+names(lifetable_v3)[2] <- "FemaleDeath"
+
+# To bind the two data frames we need the same number of rows
+firstLine <- data.frame(0,0)
+names(firstLine)[1] <- "MaleDeath"
+names(firstLine)[2] <- "FemaleDeath"
+
+lifetable_v3 <- rbind(firstLine, lifetable_v3)
+lifetable_final <- cbind(lifetable_v2, lifetable_v3)
+```
+
+
+
+
+## Display distribution for age at time of death
+
+```{r display-age-distribution}
+df <- reshape2::melt(lifetable_final[,c(1,4,5)] ,  
+                     id.vars = 'age', variable.name = 'Gender')
+ggplot(df, aes(age, value)) + 
+  geom_line(aes(colour = Gender)) +
+  labs(x = "Age of death in years",
+       y = "Death per 100,000") +
+  scale_color_discrete(labels = c("Male", "Female")) +
+  theme(legend.position = c(.9,.8))
+
+```
+

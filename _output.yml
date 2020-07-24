@@ -1,0 +1,24 @@
+bookdown::gitbook:
+  pandoc_args: [
+      "--number-offset=0,0"
+    ]
+  fig_caption: true
+  number_sections: yes
+  toc_depth: 6
+  css: "css/mystyle.css"
+  config:
+    toc:
+      before: |
+        <li><a href="./">itns-solutions</a></li>
+      after: |
+        Thanks for providing resources: <a href="https://icons8.com" target="blank">icons8</a>
+    download: ["epub"]
+    edit: https://github.com/petzi53/itns-solutions/edit/master/%s
+    sharing:
+      facebook: yes
+      github: yes
+      twitter: yes
+      all: no
+    info: yes
+bookdown::epub_book: default
+

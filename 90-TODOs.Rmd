@@ -1,0 +1,18 @@
+# ToDos (Last revision: 2020-07-23)
+
+## For the whole book
+
++ add only those setup chunks that are necessary for the chapter
++ clean variables at the end of every chapter so that a new chapter can start from scratch
++ revise ToDos througout the book and collect them here (2020-07-23: only index-chapter done)
+
+## Preface
+
++ **explain how to use the different types of exercises**
++ where and how to report errors
++ divide setup chunks to other chapters where they are inmmediately needed
+
+## Chapter 3
+
++ add funtionality to the shiny demo: load and store data.
+
