@@ -4,7 +4,7 @@
 This website [itns-exercises](https://bookdown.org/pbaumgartner/itns-exercises/) is an (inoffical) companion book for [Introduction to the New Statistics](https://www.routledgetextbooks.com/textbooks/9781138825529/) (abbreviated <i>itns</i>). It offers 
 
 + interactive exercises and quizzes designed with [H5P](https://h5p.org/)
-+ interactive demonstrations developed with [Shiny](https://shiny.rstudio.com/)
++ interactive demonstrations developed with [learnr](https://rstudio.github.io/learnr/) and [Shiny](https://shiny.rstudio.com/)
 + R tutorials for the end-of-chapter exercises of _itns_
 
 Published so far are exercises for chapter 1-4: https://bookdown.org/pbaumgartner/itns-exercises/
