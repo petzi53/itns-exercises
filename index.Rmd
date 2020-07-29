@@ -215,6 +215,11 @@ You can contact me via [my GitHub page](https://github.com/petzi53). Use the [re
 Be aware that I am still not very proficient with advanced functionalities of GitHub. I already did a few PR but never received one.
 ```
 
+## Licence {-}
+
+This work is licensed under a [Creative Commons Attribution 4.0 International License](https://creativecommons.org/licenses/by/4.0/).
+
+***
 
 ## General Setup {-}
 

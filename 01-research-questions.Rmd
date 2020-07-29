@@ -4,6 +4,11 @@ If you prefer to use for the exercises your phone or tablet, [scan the associate
 
 ## Interactive Video
 
+
+```{block2, help-video1, type='rmdinfo'}
+If you dont know how to use the video exercise go to the [help picture in the appendix](#help-interactive-video). 
+```
+
 ### Research questions {#chap01-video-research-questions}
 
 <iframe src="https://peter.baumgartner.name/wp-admin/admin-ajax.php?action=h5p_embed&id=49" width="958" height="665" frameborder="0" allowfullscreen="allowfullscreen"></iframe><script src="https://peter.baumgartner.name/wp-content/plugins/h5p/h5p-php-library/js/h5p-resizer.js" charset="UTF-8"></script>
@@ -83,7 +88,7 @@ Integrating this exercise into this books destroys the internal linking. It seem
 
 #### Research & Estimation (LearnR) {#chap01-steps-learnr}
 
-<iframe src="https://pbaumgartner.shinyapps.io/itns01-order-sentences/" width="958" height="800" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
+<iframe src="https://pbaumgartner.shinyapps.io/itns-research-steps/#section-research-process" width="958" height="800" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
 
 
 ## Meta-Analysis

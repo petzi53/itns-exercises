@@ -9,11 +9,11 @@ bookdown::gitbook:
   config:
     toc:
       before: |
-        <li><a href="./">itns-solutions</a></li>
+        <li><a href="./">itns-exercises</a></li>
       after: |
         Thanks for providing resources: <a href="https://icons8.com" target="blank">icons8</a>
     download: ["epub"]
-    edit: https://github.com/petzi53/itns-solutions/edit/master/%s
+    edit: https://github.com/petzi53/itns-exercises/edit/master/%s
     sharing:
       facebook: yes
       github: yes

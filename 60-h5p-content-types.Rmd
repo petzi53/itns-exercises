@@ -1,3 +1,9 @@
 # H5P Content types
 
-Here I will describe the UI of the different exercises.
+## Interactive Video {#help-interactive-video}
+
+
+```{r label='help-video', fig.align='center', out.width="80%", echo=FALSE}
+knitr::include_graphics("img/chap60/help-video-min.jpg")
+```
+<center><small>**Figure B:** _Mapping of my three learning modes with the cognitive processes of the Anderson-Krathwohl taxonomy_</small></center>
