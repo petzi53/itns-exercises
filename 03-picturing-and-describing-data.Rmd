@@ -2,9 +2,20 @@
 
 If you prefer to use for the exercises your phone or tablet, [scan the associated QR code](qr-codes-of-exercises.html#qr-codes-for-chapter-3).
 
-## Interactive Video {#chap03-video-guess-measures}
+## Interactive Video {#chap03-video}
 
-<iframe src="https://peter.baumgartner.name/wp-admin/admin-ajax.php?action=h5p_embed&id=111" width="960" height="505" frameborder="0" allowfullscreen="allowfullscreen"></iframe><script src="https://peter.baumgartner.name/wp-content/plugins/h5p/h5p-php-library/js/h5p-resizer.js" charset="UTF-8"></script>
+### Descriptives: Guess Measures {#chap03-video-descriptives}
+
+A tip for a better user experience with this video: Do not click on the 'Continue'-button after you answered a question but on the triangle on the left at the control strip.
+
+<iframe src="https://peter.baumgartner.name/wp-admin/admin-ajax.php?action=h5p_embed&id=116" width="960" height="505" frameborder="0" allowfullscreen="allowfullscreen"></iframe><script src="https://peter.baumgartner.name/wp-content/plugins/h5p/h5p-php-library/js/h5p-resizer.js" charset="UTF-8"></script>
+
+### More Descriptives: Estimate Measures {#chap03-video-more-descriptives}
+
+A tip for a better user experience with this video: Do not click on the 'Continue'-button after you answered a question but on the triangle on the left at the control strip.
+
+<iframe src="https://peter.baumgartner.name/wp-admin/admin-ajax.php?action=h5p_embed&id=113" width="960" height="661" frameborder="0" allowfullscreen="allowfullscreen"></iframe><script src="https://peter.baumgartner.name/wp-content/plugins/h5p/h5p-php-library/js/h5p-resizer.js" charset="UTF-8"></script>
+
 
 
 ## Glossary {.tabset}
