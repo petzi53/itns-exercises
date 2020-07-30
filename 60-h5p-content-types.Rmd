@@ -3,7 +3,6 @@
 ## Interactive Video {#help-interactive-video}
 
 
-```{r label='help-video', fig.align='center', out.width="80%", echo=FALSE}
-knitr::include_graphics("img/chap60/help-video-min.jpg")
+```{r label='help-video', fig.align='center', out.width="80%",echo=F, fig.cap='Control Strip for h5p-Modul "Interactive Video"'}
+knitr::include_graphics("img/chap60/interactive-video-help-min.png")
 ```
-<center><small>**Figure B:** _Mapping of my three learning modes with the cognitive processes of the Anderson-Krathwohl taxonomy_</small></center>
