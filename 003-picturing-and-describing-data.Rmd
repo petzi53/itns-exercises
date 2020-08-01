@@ -1,0 +1,98 @@
+# Picturing & Describing Data {#chapter-03-IE}
+
+If you prefer to use for the exercises your phone or tablet, [scan the associated QR code](qr-codes-of-exercises.html#qr-codes-for-chapter-3).
+
+## Interactive Video {#chap03-video}
+
+### Descriptives: Guess Measures {#chap03-video-descriptives}
+
+
+A tip for a better user experience with this video: Do not click on the 'Continue'-button after you answered a question but on the triangle on the left at the control strip.
+
+<iframe src="https://peter.baumgartner.name/wp-admin/admin-ajax.php?action=h5p_embed&id=116" width="960" height="505" frameborder="0" allowfullscreen="allowfullscreen"></iframe><script src="https://peter.baumgartner.name/wp-content/plugins/h5p/h5p-php-library/js/h5p-resizer.js" charset="UTF-8"></script>
+
+### More Descriptives: Estimate Measures {#chap03-video-more-descriptives}
+
+A tip for a better user experience with this video: Do not click on the 'Continue'-button after you answered a question but on the triangle on the left at the control strip.
+
+<iframe src="https://peter.baumgartner.name/wp-admin/admin-ajax.php?action=h5p_embed&id=113" width="960" height="661" frameborder="0" allowfullscreen="allowfullscreen"></iframe><script src="https://peter.baumgartner.name/wp-content/plugins/h5p/h5p-php-library/js/h5p-resizer.js" charset="UTF-8"></script>
+
+
+
+## Glossary {#chap03-glossary}
+
+### Accordion {#chap03-glossary-accordion}
+
+<iframe src="https://peter.baumgartner.name/wp-admin/admin-ajax.php?action=h5p_embed&id=93" width="960" height="1849" frameborder="0" allowfullscreen="allowfullscreen"></iframe><script src="https://peter.baumgartner.name/wp-content/plugins/h5p/h5p-php-library/js/h5p-resizer.js" charset="UTF-8"></script>
+
+
+### Dialog Cards {#chap03-glossary-dialog-cards}
+
+<iframe src="https://peter.baumgartner.name/wp-admin/admin-ajax.php?action=h5p_embed&id=107" width="960" height="621" frameborder="0" allowfullscreen="allowfullscreen"></iframe><script src="https://peter.baumgartner.name/wp-content/plugins/h5p/h5p-php-library/js/h5p-resizer.js" charset="UTF-8"></script>
+
+
+### Drag Words Part I {#chap03-glossary-drag-words-part1}
+
+<iframe src="https://peter.baumgartner.name/wp-admin/admin-ajax.php?action=h5p_embed&id=95" width="960" height="950" frameborder="0" allowfullscreen="allowfullscreen"></iframe><script src="https://peter.baumgartner.name/wp-content/plugins/h5p/h5p-php-library/js/h5p-resizer.js" charset="UTF-8"></script>
+
+
+### Drag Words Part II {#chap03-glossary-drag-words-part2}
+
+<iframe src="https://peter.baumgartner.name/wp-admin/admin-ajax.php?action=h5p_embed&id=96" width="960" height="1" frameborder="0" allowfullscreen="allowfullscreen"></iframe><script src="https://peter.baumgartner.name/wp-content/plugins/h5p/h5p-php-library/js/h5p-resizer.js" charset="UTF-8"></script>
+
+### Fill In (Dropdown) {#chap03-glossary-fill-in-dropdown}
+
+<iframe src="https://peter.baumgartner.name/wp-admin/admin-ajax.php?action=h5p_embed&id=97" width="960" height="1" frameborder="0" allowfullscreen="allowfullscreen"></iframe><script src="https://peter.baumgartner.name/wp-content/plugins/h5p/h5p-php-library/js/h5p-resizer.js" charset="UTF-8"></script>
+
+### Flash Cards {#chap03-glossary-flash-cards}
+
+<iframe src="https://peter.baumgartner.name/wp-admin/admin-ajax.php?action=h5p_embed&id=108" width="960" height="86" frameborder="0" allowfullscreen="allowfullscreen"></iframe><script src="https://peter.baumgartner.name/wp-content/plugins/h5p/h5p-php-library/js/h5p-resizer.js" charset="UTF-8"></script>
+
+### Fill In (Blanks) {#chap03-glossary-fill-in-blanks}
+
+<iframe src="https://peter.baumgartner.name/wp-admin/admin-ajax.php?action=h5p_embed&id=94" width="960" height="1" frameborder="0" allowfullscreen="allowfullscreen"></iframe><script src="https://peter.baumgartner.name/wp-content/plugins/h5p/h5p-php-library/js/h5p-resizer.js" charset="UTF-8"></script>
+
+
+## Describing Data
+
+### Aspects of Data Distributions (Fill In Dropdown)
+
+<iframe src="https://peter.baumgartner.name/wp-admin/admin-ajax.php?action=h5p_embed&id=109" width="960" height="538" frameborder="0" allowfullscreen="allowfullscreen"></iframe><script src="https://peter.baumgartner.name/wp-content/plugins/h5p/h5p-php-library/js/h5p-resizer.js" charset="UTF-8"></script>
+
+
+### Distribution Shapes (Drag & Drop)
+
+<iframe src="https://peter.baumgartner.name/wp-admin/admin-ajax.php?action=h5p_embed&id=106" width="960" height="929" frameborder="0" allowfullscreen="allowfullscreen"></iframe><script src="https://peter.baumgartner.name/wp-content/plugins/h5p/h5p-php-library/js/h5p-resizer.js" charset="UTF-8"></script>
+
+### Histogram & Bins (Shiny)
+
+<iframe src="https://pbaumgartner.shinyapps.io/histogram/" width="960" height="500" frameborder="0" allowfullscreen="allowfullscreen"></iframe><script src="https://peter.baumgartner.name/wp-content/plugins/h5p/h5p-php-library/js/h5p-resizer.js" charset="UTF-8"></script>
+
+
+## TODO: Reporting (Advanced Blank) {#chap03-reporting-advanced-blanks}
+
+
+
+## TODO: Quizzes and Assessment {#chap03-quizzes}
+
+### TODO: Quiz 1 (Question Set) {#chap03-quiz-1}
+
+
+### TODO: Quiz 2 (Question Set) {#chap03-quiz-2}
+
+
+
+### TODO: Quiz 3 (Question Set) {#chap03-quiz-3}
+
+
+
+### TODO: Take-Home Messages (Summary) {#chap03-take-home}
+
+
+### TODO: Assessment (Question Set) {#chap03-assessment}
+
+
+## End-of-Chapter Exercises
+
+
+

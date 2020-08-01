@@ -1,101 +1,108 @@
-# Picturing & Describing Data {#chapter-03}
+# (PART) R Tutorials {-}
 
-If you prefer to use for the exercises your phone or tablet, [scan the associated QR code](qr-codes-of-exercises.html#qr-codes-for-chapter-3).
+# Tutorials for 3: Picture & Describing Data {#chapter-03-R}
 
-## Interactive Video {#chap03-video}
+## General Setup {#general-setup-03}
 
-### Descriptives: Guess Measures {#chap03-video-descriptives}
+### Store variables
 
-A tip for a better user experience with this video: Do not click on the 'Continue'-button after you answered a question but on the triangle on the left at the control strip.
+```{r 03-generate-freeze, echo=FALSE}
+# Store all variables up to this line. 
+# Later generated variables will be deleted after the end of each chapter
+freeze <- ls()
+```
 
-<iframe src="https://peter.baumgartner.name/wp-admin/admin-ajax.php?action=h5p_embed&id=116" width="960" height="505" frameborder="0" allowfullscreen="allowfullscreen"></iframe><script src="https://peter.baumgartner.name/wp-content/plugins/h5p/h5p-php-library/js/h5p-resizer.js" charset="UTF-8"></script>
+### Global options {#global-options-03}
 
-### More Descriptives: Estimate Measures {#chap03-video-more-descriptives}
+```{r 03-global-options, highlight=TRUE, collapse=TRUE}
 
-A tip for a better user experience with this video: Do not click on the 'Continue'-button after you answered a question but on the triangle on the left at the control strip.
+### setting up working environment
+### for details see: https://yihui.name/knitr/options/
+knitr::opts_chunk$set(
+        collapse = T,
+        echo = T,
+        message = T,
+        error = T,
+        warning = T,
+        comment = '##',
+        highlight = T,
+        prompt = F,
+        strip.white = T,
+        tidy = T
+        )
 
-<iframe src="https://peter.baumgartner.name/wp-admin/admin-ajax.php?action=h5p_embed&id=113" width="960" height="661" frameborder="0" allowfullscreen="allowfullscreen"></iframe><script src="https://peter.baumgartner.name/wp-content/plugins/h5p/h5p-php-library/js/h5p-resizer.js" charset="UTF-8"></script>
-
-
-
-## Glossary {.tabset}
-
-### Accordion {#chap03-glossary-accordion}
-
-<iframe src="https://peter.baumgartner.name/wp-admin/admin-ajax.php?action=h5p_embed&id=93" width="960" height="1849" frameborder="0" allowfullscreen="allowfullscreen"></iframe><script src="https://peter.baumgartner.name/wp-content/plugins/h5p/h5p-php-library/js/h5p-resizer.js" charset="UTF-8"></script>
-
-
-### Dialog Cards {#chap03-glossary-dialog-cards}
-
-<iframe src="https://peter.baumgartner.name/wp-admin/admin-ajax.php?action=h5p_embed&id=107" width="960" height="621" frameborder="0" allowfullscreen="allowfullscreen"></iframe><script src="https://peter.baumgartner.name/wp-content/plugins/h5p/h5p-php-library/js/h5p-resizer.js" charset="UTF-8"></script>
-
-
-### Drag Words Part I {#chap03-glossary-drag-words-part1}
-
-<iframe src="https://peter.baumgartner.name/wp-admin/admin-ajax.php?action=h5p_embed&id=95" width="960" height="950" frameborder="0" allowfullscreen="allowfullscreen"></iframe><script src="https://peter.baumgartner.name/wp-content/plugins/h5p/h5p-php-library/js/h5p-resizer.js" charset="UTF-8"></script>
-
-
-### Drag Words Part II {#chap03-glossary-drag-words-part2}
-
-<iframe src="https://peter.baumgartner.name/wp-admin/admin-ajax.php?action=h5p_embed&id=96" width="960" height="1" frameborder="0" allowfullscreen="allowfullscreen"></iframe><script src="https://peter.baumgartner.name/wp-content/plugins/h5p/h5p-php-library/js/h5p-resizer.js" charset="UTF-8"></script>
-
-### Fill In (Dropdown) {#chap03-glossary-fill-in-dropdown}
-
-<iframe src="https://peter.baumgartner.name/wp-admin/admin-ajax.php?action=h5p_embed&id=97" width="960" height="1" frameborder="0" allowfullscreen="allowfullscreen"></iframe><script src="https://peter.baumgartner.name/wp-content/plugins/h5p/h5p-php-library/js/h5p-resizer.js" charset="UTF-8"></script>
-
-### Flash Cards {#chap03-glossary-flash-cards}
-
-<iframe src="https://peter.baumgartner.name/wp-admin/admin-ajax.php?action=h5p_embed&id=108" width="960" height="86" frameborder="0" allowfullscreen="allowfullscreen"></iframe><script src="https://peter.baumgartner.name/wp-content/plugins/h5p/h5p-php-library/js/h5p-resizer.js" charset="UTF-8"></script>
-
-### Fill In (Blanks) {#chap03-glossary-fill-in-blanks}
-
-<iframe src="https://peter.baumgartner.name/wp-admin/admin-ajax.php?action=h5p_embed&id=94" width="960" height="1" frameborder="0" allowfullscreen="allowfullscreen"></iframe><script src="https://peter.baumgartner.name/wp-content/plugins/h5p/h5p-php-library/js/h5p-resizer.js" charset="UTF-8"></script>
+```
 
 
-## Describing Data
-
-### Aspects of Data Distributions (Fill In Dropdown)
-
-<iframe src="https://peter.baumgartner.name/wp-admin/admin-ajax.php?action=h5p_embed&id=109" width="960" height="538" frameborder="0" allowfullscreen="allowfullscreen"></iframe><script src="https://peter.baumgartner.name/wp-content/plugins/h5p/h5p-php-library/js/h5p-resizer.js" charset="UTF-8"></script>
+### Installing and loading R packages {#packages-03}
 
 
-### Distribution Shapes (Drag & Drop)
+```{r 03-installing-and-loading-R-packages}
 
-<iframe src="https://peter.baumgartner.name/wp-admin/admin-ajax.php?action=h5p_embed&id=106" width="960" height="929" frameborder="0" allowfullscreen="allowfullscreen"></iframe><script src="https://peter.baumgartner.name/wp-content/plugins/h5p/h5p-php-library/js/h5p-resizer.js" charset="UTF-8"></script>
-
-### Histogram & Bins (Shiny)
-
-<iframe src="https://pbaumgartner.shinyapps.io/histogram/" width="960" height="500" frameborder="0" allowfullscreen="allowfullscreen"></iframe><script src="https://peter.baumgartner.name/wp-content/plugins/h5p/h5p-php-library/js/h5p-resizer.js" charset="UTF-8"></script>
-
-
-## TODO: Reporting (Advanced Blank) {#chap03-reporting-advanced-blanks}
+### accompanying R package: https://github.com/gitrman/itns
+if (!require("itns"))
+        {remotes::install_github("gitrman/itns", 
+                         build = TRUE, build_opts = c("--no-resave-data", "--no-manual"))
+        library("itns")}
 
 
+### https://www.tidyverse.org/
+if (!require("tidyverse"))
+        {install.packages("tidyverse", repos = 'http://cran.wu.ac.at/')
+        library(tidyverse)}
 
-## Quizzes and Assessment
-
-### TODO: Quiz 1 (Question Set) {#chap03-quiz-1}
-
-
-### TODO: Quiz 2 (Question Set) {#chap03-quiz-2}
-
-
-
-### TODO: Quiz 3 (Question Set) {#chap03-quiz-3}
-
-
-
-### TODO: Take-Home Messages (Summary) {#chap03-take-home}
-
-
-### TODO: Assessment (Question Set) {#chap03-assessment}
+### above command installed and loaded the core tidyverse packages:
+# ggplot2: data visualisation
+# tibble:  a modern take on data frames
+# tidyr:   data tidying
+# readr:   data import (csv, tsv, fwf)
+# purrr:   functional R programming
+# dplyr:   data (frame) manipulation
+# stringr: string manipulation
+# forcats: working with categorial varialbes
 
 
-## End-of-Chapter Exercises
+### to calculate mode:
+if (!require("modeest"))
+        {install.packages("modeest", repos = 'http://cran.wu.ac.at/')
+        library(modeest)}
 
-### Calculating decriptive statistics
+# I am going to use the `janitor` package for calculating table totals
+if (!require("janitor"))
+        {install.packages("janitor", repos = 'http://cran.wu.ac.at/')
+        library(janitor)}
 
-#### Description
+### install "checkr" to test code submissions in learnr (and potentially other) tutorials
+### there is also a problem in line 639 in "vignettes/checkr.Rmd"
+### I have changed version hoping that 0.6 is unsensible to the "older" CRAN version (0.4) and does not update
+if (!require("checkr"))
+        {remotes::install_github("petzi53/checkr2", 
+                                 build = TRUE, build_opts = c("--no-resave-data", "--no-manual"))
+        library(checkr)}
+
+if (!require("itns"))
+        {remotes::install_github("gitrman/itns", 
+                         build = TRUE, build_opts = c("--no-resave-data", "--no-manual"))
+        library("itns")}
+
+
+```
+
+### Theme adaption for the graphic display with `ggplot2` {#theme-03}
+
+```{r 03-generate-my-own-theme}
+
+my_theme <- theme_light() +
+        theme(plot.title = element_text(size = 10, face = "bold", hjust = 0.5)) +
+        theme(plot.background = element_rect(color = NA, fill = NA)) +
+        theme(plot.margin = margin(1, 0, 0, 0, unit = 'cm'))
+```
+
+
+
+## Calculating decriptive statistics
+
+### Description
 
 The following table contains a set of ACT scores from a sample of college students. The ACT is a standardized college-readiness exam taken by many U.S. students; scores can range fro 1 to 36.
 
@@ -119,9 +126,9 @@ a. **Location:** Calculate the mean (_M_), median, and mode for this sample.
 b. **Spread:** Calculate the standard deviation (_s_), range and interquartile range for this sample. For _s_, fill in the two columns on the right in the table above, then use the formula to calculate _s_ yourself.
 
 
-#### Solution
+### Solution
 
-```{r laod-data-into-vector}
+```{r load-data-into-vector}
 ACT <- c(26, 24, 28, 31, 20, 27, 18, 17, 21, 29, 24)
 ```
 
@@ -172,7 +179,6 @@ ACT_df <- ACT_df %>% mutate(
     `(Xi-M)^2` = round(`Xi-M`^2,2)
     )
 
-
 ACT_df <- ACT_df %>%
     adorn_totals("row") # janitor package to add totals
 ACT_df[12, 3] <- "   " # summing up Xi-M does not make sense
@@ -186,9 +192,9 @@ knitr::kable(ACT_df,
 
 This table has not the same information as in the book p.505. At first I tried to build it similar but this complicates everything as it is not suitable for using R.
 
-### Loading our first data set
+## Loading our first data set
 
-#### Inspecting the `itns`-package
+### Inspecting the `itns`-package
 
 In the task description of the _itns_-book you will find the following passage (p.68):
 
@@ -211,7 +217,7 @@ To detect the name of the variables (= columns) and the data structure we use th
 # View(college_survey1) # opens the data set in the RStudio data browser
 ```
 
-#### Reading the codebook for `college-survey1`
+### Reading the codebook for `college-survey1`
 
 Even the data set is already included in the `itns` package, you still will need to go to the companion website and download the data set as you will need the code book to understand what all the variables and codes mean. To save you time I have it included here. 
 
@@ -246,11 +252,11 @@ This is data from survey of college students.  The survey was put together as a 
 * Inteligence_Value  - Measure of degree to which participant values intelligence, rated on a scale from 1 (strongly agree) to 5 (strongly agree).  Sample item: "Intelligence greatly contributes to success in life.".  See 
 * Raven_Score - % correct out of 8 items on the Raven Progressive Matrix Scale, a scale of logical thinking/IQ.   Adapted from https://www.raventest.net/.  
 
-### Distribution of positive affect scores
+## Distribution of positive affect scores
 
 Now we can start to visualize the different distribution as described in 2a-e (pp.68f.)
 
-#### Visualize the distribution
+### Visualize the distribution
 
 > Visualize the distribution of positive affect scores (Positive_Affect). Students rate how often they experience each of 10 positive emotions, using a scale from 1 (_not at all_) to 5 (_extremely_), then the score is the average of the 10 ratings.
 
@@ -258,7 +264,7 @@ The reference in the codebook to the PANAS scale is not valid anymore. But I fou
 
 Following the recommendation by the paper [Getting Started with the New Statistics in R](https://s3-eu-west-1.amazonaws.com/s3-euw1-ap-pe-ws4-cws-documents.ri-prod/9781138825529/SoftwareGuide/R_Guide.zip) (p.7) I am going to use the `ggplot2` package. See details to the command at the [ggplot2 web page](https://ggplot2.tidyverse.org/reference/geom_histogram.html).
 
-#### Histogram
+### Histogram
 
 ```{r dist-pos-affect-v1}
 ggplot(college_survey1, aes(positive_affect)) +
@@ -269,14 +275,14 @@ After executing the above command `ggplot2` gives us a notification and a warnin
 
 ![](img/ggplot2-positive_affect-message-min.png)
 
-##### Addressing the notification
+#### Addressing the notification
 
 <p><div class="alert alert-warning" role="alert">
 It is important to experiment with different values of the `binwidth` parameter to get a feeling about the effects of the visualization of the distribution.</div></p>
 
 I chose a binwidth of .1, meaning that I will get 40 bins as the scale goes from 1-5. 
 
-##### Addressing the warning
+#### Addressing the warning
 
 `ggplot2` warns us that there are data missing in 8 records. Look at the RStudio data browser and scroll down to check it. You will see that at the end of the file, starting with record number 231 some data are missing ("not availabe" = NA). In our next visualization we tell R to remove these missing values silently and to use the binwidth of .1.
 
@@ -285,7 +291,7 @@ ggplot(college_survey1, aes(positive_affect)) +
   geom_histogram(binwidth = .1, na.rm = TRUE) # always experiment with the binwidth
 ```
 
-#### Dot plot
+### Dot plot
 
 For more information about this command see: https://ggplot2.tidyverse.org/reference/geom_dotplot.html
 
@@ -297,7 +303,7 @@ ggplot(college_survey1, aes(positive_affect)) +
 
 It is a [notorious problem](https://github.com/tidyverse/ggplot2/issues/2203) with dot plots produced by `ggplot2` that the y-axis is normalized and displays meaningless values between 0 and 1. I found recently a workaround [posted at StackOverflow](https://stackoverflow.com/questions/49330742/change-y-axis-of-dot-plot-to-reflect-actual-count-using-geom-dotplot).
 
-```{r}
+```{r display-positive-affect-as-dot-plot-enhanced}
 # library(ggplot2) ## already loaded with tidyverse
 library(dplyr)     ## already loaded with tidyverse
 library(ggExtra)
@@ -327,7 +333,7 @@ dotchart = dotchart +
 dotchart
 ```
 
-#### Interpretation
+### Interpretation
 
 > Describe the distribution you see, noting the location, spread, and shape, and the number of major peaks.
 
@@ -340,7 +346,7 @@ s
 > Positive affect is relatively normally distributed—there is a single, strong peak and the distribution is fairly symmetrical. The mean score of 3.43 is a little above the midpoint of the 1–5 scale, indicating that students on average feel moderate levels of positive affect. There is wide spread, with _s_ = 0.71 and scores ranging across almost the full range.
 
 
-### Distribution of student age
+## Distribution of student age
 
 The next exercises are similar. I am going to produce just the histograms.
 
@@ -357,7 +363,7 @@ s
 
 > There is strong positive skew, with most students aged 18–22, but a long upper tail of ages ranging up to nearly 60. The mean (21.8 years) is most affected by the outliers, and the median (20 years) is probably a more useful indicator of location. The skew causes the mean to be larger than the median. The college has mostly younger students, but also some older returning and non-traditional students. Removing outliers would misrepresent the sample, by omitting those older students. They should be removed only if there is reason to examine the subgroup of younger students, perhaps aged up to about 32.
 
-### Distribution of exercise scores
+## Distribution of exercise scores
 
 Again the URL in the code book does not exist anymore but you can [download the article](https://hfjc.library.ubc.ca/index.php/HFJC/article/view/82/49) dircetly from Gaston Godin's web page.
 
@@ -390,7 +396,7 @@ s
 ```
 
 
-### Distribution of Raven scores and GPA
+## Distribution of Raven scores and GPA
 
 > Visualize the distribution of Raven scores (Raven_Score), which are the proportion correct on a short 8-item IQ test. Next, visualize the distribution of GPA. Compare the two distributions. Why might they differ in shape?
 
@@ -416,7 +422,7 @@ s
 
 > Raven IQ Scores are relatively normally distributed. The mean is .377, median is .375, and standard deviation is .199. In contrast, GPA is very strongly negatively skewed, with scores stacked up near 4.0, the top of the GPA scale. A long tail extends down to very low values of GPA. The mean is 3.34, median is 3.40, and SD is 0.51. Different variables can have different distributions, even for the same sample. However, we expect IQ and GPA to be related, so it’s perhaps surprising that their two distributions are so different. The GPA distribution, with most of the scores concentrated in the 3.5–4.0 range, suggests that the testing is not sufficiently challenging to distinguish among students in the upper parts of the distribution. You may have heard of grade inflation occurring in the last one or two decades. Search online for “college grade inflation”, or similar, and you should easily find statistics describing a dramatic increase in the proportion of A grades in recent years, and interesting discussion about likely causes and consequences.
 
-### Presentation of the gender distribution 
+## Presentation of the gender distribution 
 
 > In this data set (of the original Excel file, pb), Gender is coded as female = 1 and male = 2. ESCI calculates that the mean is _M_ = 1.28 for Gender. Does this make sense? How might you better summarize gender in this sample?
 
@@ -455,7 +461,7 @@ All these commands are using vectors, e.g. the take all values of the column `ra
 scale(college_survey1$raven_score)[1]
 ```
 
-### The same student in GPA
+## The same student in GPA
 
 > The same female participant has a GPA of 3.9. What is her _z_ score for GPA? On which
 measure (GPA or Raven) is she more unusual?
@@ -476,7 +482,7 @@ these raw scores are the same, they are very different within the context of the
 
 Sorting either the column `positive_affect` or `negative_affect` we see that the particpant of row 154 is the one who scored a 2 for Positive Affect and a 2 for Negative Affect. But we should not use the direct 
 
-#### Positive Affect
+### Positive Affect
 
 ```{r z-score-positive-aspect}
 college_survey1$positive_affect[154]
@@ -485,7 +491,7 @@ sd(na.omit(college_survey1$positive_affect))
 scale(college_survey1$positive_affect)[154]
 ```
 
-#### Negative Affect
+### Negative Affect
 
 ```{r z-score-negative-aspect}
 college_survey1$negative_affect[154]
@@ -494,13 +500,13 @@ sd(na.omit(college_survey1$negative_affect))
 scale(college_survey1$negative_affect)[154]
 ```
 
-#### Comparison: Positive with Negative Affect
+### Comparison: Positive with Negative Affect
 
 > **For positive affect:** _X_ = 2.0, _M_ = 3.43, _s_ = 0.71 and we calculate _z_ = −2.01. 
 > **For negative affect:** _X_ = 2.0, _M_ = 2.32, _s_ = 0.75 and we calculate _z_ = −0.43. 
 > The positive affect score is more unusual than the negative affect score, within this sample.
 
-### Determine outliers
+## Determine outliers
 
 
 
@@ -565,7 +571,7 @@ Why do all these measures of location seem to fail?
 > With such a strongly bimodal distribution, none of the three measures of location does a
 great job of representing the distribution. Both the mean (48.2) [49.39] and median (50) represent an intermediate level of belief that is actually rare; reporting only one mode would be misleading. The best non-graphical strategy would be to describe the distribution in words and report the location of each mode: one at 0 level of belief, the other at 100.
 
-## Working with the oiginal Excel data set
+## Working with the oiginal Excel file
 
 ### Load data set from Excel file
 
@@ -599,7 +605,6 @@ During the inspection of the data set I noticed two other minor problems:
 college1 <- college1[1:243, ] # delete empty rows
 colnames(college1)[5] <- "School_Year"
 ```
-
 
 
 ### Problems with the Exercise variable
@@ -653,6 +658,7 @@ Here I will reproduce the quote from the book
 
 > No! It doesn’t make sense to calculate a mean for data on a nominal scale. It’s often convenient to represent nominal data with numerical codes, but it’s important to remember that these codes have no numerical meaning, and thus calculation of most descriptive statistics doesn’t make sense. Nominal data can be summarized with frequencies (175 females and 68 males) and relative frequencies (72.0% females and 28.0% males). (p.506)
 
+
 We can use the same program lines as we did with the `college_survey1` data frame.
 
 ```{r table-gender-data}
@@ -679,4 +685,20 @@ We have successfully converted the numeric column into a categorial variable wit
 mean(college1$Gender_Code)
 ```
 
+## Cleanup {#cleanup-03}
+
+```{r 03-cleanup}
+
+suppressWarnings(lapply(names(sessionInfo()$otherPkgs),
+                         function(pkgs)
+                           detach(
+                             paste0('package:', pkgs),
+                             character.only = T,
+                             unload = T,
+                             force = T
+                           )))
+
+rm(list = setdiff(ls(), freeze))
+
+```
 

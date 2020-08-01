@@ -1,0 +1,55 @@
+# Normal Distribution
+
+## Interactive Video {#chap04-video}
+
+
+## Glossary {#chap04-glossary}
+
+### Accordion {#chap04-glossary-accordion}
+
+<iframe src="https://peter.baumgartner.name/wp-admin/admin-ajax.php?action=h5p_embed&id=93" width="960" height="1849" frameborder="0" allowfullscreen="allowfullscreen"></iframe><script src="https://peter.baumgartner.name/wp-content/plugins/h5p/h5p-php-library/js/h5p-resizer.js" charset="UTF-8"></script>
+
+
+### Dialog Cards {#chap04-glossary-dialog-cards}
+
+
+
+### Drag words Part I {#chap04-glossary-drag-words-part1}
+
+
+
+### Drag words Part II {#chap04-glossary-drag-words-part2}
+
+
+
+### Flash Cards {#chap04-glossary-flash-cards}
+
+
+
+### Fill in the Blanks {#chap04-glossary-fill-in-the-blanks}
+
+
+
+## Reporting (Advanced Blank) {#chap04-reporting-advanced-blanks}
+
+
+
+## Quizzes and Assessment
+
+### Quiz 1 (Question Set) {#chap04-quiz-1}
+
+
+### Quiz 2 (Question Set) {#chap04-quiz-2}
+
+
+
+### Quiz 3 (Question Set) {#chap04-quiz-3}
+
+
+
+### Take-Home Messages (Summary) {#chap04-take-home}
+
+
+### Assessment (Question Set) {#chap04-assessment}
+
+

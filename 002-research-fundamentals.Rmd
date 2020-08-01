@@ -6,7 +6,7 @@ If you prefer to use for the exercises your phone or tablet, [scan the associate
 
 <iframe src="https://peter.baumgartner.name/wp-admin/admin-ajax.php?action=h5p_embed&id=61" width="960" height="666" frameborder="0" allowfullscreen="allowfullscreen"></iframe><script src="https://peter.baumgartner.name/wp-content/plugins/h5p/h5p-php-library/js/h5p-resizer.js" charset="UTF-8"></script>
 
-## Glossary
+## Glossary {#chap02-glossary}
 
 ### Accordion {#chap02-glossary-accordion}
 
@@ -69,7 +69,7 @@ If you prefer to use for the exercises your phone or tablet, [scan the associate
 <iframe src="https://peter.baumgartner.name/wp-admin/admin-ajax.php?action=h5p_embed&id=78" width="960" height="1" frameborder="0" allowfullscreen="allowfullscreen"></iframe><script src="https://peter.baumgartner.name/wp-content/plugins/h5p/h5p-php-library/js/h5p-resizer.js" charset="UTF-8"></script>
 
 
-## Quizzes and Assessment
+## Quizzes and Assessment {#chap02-quizzes}
 
 ### Quiz 1 (Question Set) {#chap02-quiz-1}
 

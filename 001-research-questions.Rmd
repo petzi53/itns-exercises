@@ -1,8 +1,10 @@
+# (PART) Interactive Exercises {-}
+
 # Asking and Answering Research Questions {#chapter-01}
 
 If you prefer to use for the exercises your phone or tablet, [scan the associated QR code](qr-codes.html#chapter-1).
 
-## Interactive Video
+## Interactive Video {#chap01-video}
 
 
 ```{block2, help-video1, type='rmdinfo'}
@@ -21,7 +23,7 @@ If you dont know how to use the video exercise go to the [help picture in the ap
 
 <iframe src="https://peter.baumgartner.name/wp-admin/admin-ajax.php?action=h5p_embed&id=51" width="958" height="665" frameborder="0" allowfullscreen="allowfullscreen"></iframe><script src="https://peter.baumgartner.name/wp-content/plugins/h5p/h5p-php-library/js/h5p-resizer.js" charset="UTF-8"></script>
 
-## Glossary
+## Glossary {#chap01-glossary}
 
 ### Accordion {#chap01-glossary-accordion}
 
@@ -108,7 +110,7 @@ Integrating this exercise into this books destroys the internal linking. It seem
 
 <iframe src="https://peter.baumgartner.name/wp-admin/admin-ajax.php?action=h5p_embed&id=46" width="958" height="252" frameborder="0" allowfullscreen="allowfullscreen"></iframe><script src="https://peter.baumgartner.name/wp-content/plugins/h5p/h5p-php-library/js/h5p-resizer.js" charset="UTF-8"></script>
 
-## Quizzes and Assessment
+## Quizzes and Assessment {#chap01-quizzes}
 
 ### Quiz 1 (Question Set) {#chap01-quiz-1}
 

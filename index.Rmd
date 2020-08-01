@@ -3,7 +3,7 @@ title: "Exercises for 'Introduction to The New Statistics'"
 author: "Peter Baumgartner"
 date: "`r Sys.Date()` - Work in progress: Finished about 20%"
 colorlinks: yes
-cover-image: img/chap00/cover-itns-min.png
+cover-image: img/cover-itns-adapted-min.jpg
 bibliography:
 - itns.bib
 - packages.bib
@@ -19,15 +19,18 @@ biblio-style: apalike
 
 # Preface {-}
 
+<a href="https://www.routledgetextbooks.com/textbooks/9781138825529/"><img src="./img/cover-itns-adapted-min.jpg" width="25%" height="25%" alt="Cover image" align="right" style="margin: 0 1em 0 1em"/></a>
 
-```{r label='cover-picture', fig.align='center', out.width=450, echo=FALSE, fig.link='https://bitly.com/pb-itns'}
-knitr::include_graphics('img/chap00/cover-itns-min.png', dpi = NA)
-```
+This website is an (inoffical) companion book for [Introduction to the New Statistics](https://www.routledgetextbooks.com/textbooks/9781138825529/) (abbreviated <i>itns</i>). It offers 
 
-This interactive book is a companion book for [Introduction to the New Statistics](https://www.routledgetextbooks.com/textbooks/9781138825529/) (abbreviated <i>itns</i>). The two types of additional material it offers are:
++ interactive exercises and quizzes designed with [H5P](https://h5p.org/)
++ interactive demonstrations developed with [learnr](https://rstudio.github.io/learnr/) and [Shiny](https://shiny.rstudio.com/)
++ R tutorials for the end-of-chapter exercises of _itns_
 
-+ interactive exercises with solutions, 
-+ R tutorials for the end-of-chapter exercises.
+GitHub resources of this book can be found in two places:
+
++ [`itns-exercises`](https://github.com/petzi53/itns-exercises/) (link to the repo on the top of this book) is the central part of the book containing all H5P-exercises and the R tutorials/solutions for the end-of-chapter exercises. 
++ [`itns-interactive`](https://github.com/petzi53/itns-interactive/) supplements the main book with exercises written in `learnr` and `shiny`. Whereas the content of the main book is published at the [bookdown server](https://bookdown.org/pbaumgartner/itns-exercises) are the interactive demonstrations of this repository published at the [shinyapps server](https://www.shinyapps.io/). Links for specific shinyapps exercises are under the appropriate section heading of this book. 
 
 ## Interactive Exercises {-}
 
@@ -110,7 +113,8 @@ The following table lists the 20 used content types, their functionality, and ap
 | Content Type             | Functionality                                       | Learning | Video | Glossary | Bulk | Recap | Assessment | R |
 |--------------------------|-----------------------------------------------------|:--------:|:-----:|:--------:|:----:|:-----:|:----------:|:-:|
 | Accordion                | Vertically stacked expandable items                 |     I    |       |     X    |      |       |            |   |
-| Advanced Fill the Blanks | Missing word (dropdown & blanks)                    |  II,III  |       |     X    |   X  |       |            |   |
+| Advanced Fill the Blanks | Missing word (dropdown)                             |    II    |       |     X    |   X  |       |            |   |
+| Advanced Fill the Blanks | Missing word (blanks)                                |   III   |       |     X    |   X  |       |            |   |
 | Course Presentation      | Interactive slides                                  |  II,III  |       |          |      |       |      X     |   |
 | Dialog Cards             | Text-based turning cards                            |     I    |       |     X    |      |       |            |   |
 | Documentation Tool       | Form wizard with text export                        |    III   |       |          |   X  |       |            |   |
@@ -173,11 +177,11 @@ To facilitate the use of mobile phones, you will find QR codes in the [Appendix 
 
 Colored paragraphs give you a visual overview of things to watch out:
 
-```{block2, demo-checklist, type='rmdchecklist'}
+```{block2, demo-checklist,  type='rmdchecklist'}
 This green-colored block summarizes crucial steps and is structured often as an ordered checklist.
 ```
 
-```{block2, demo-download, type='rmddownload'}
+```{block, demo-download, type='rmddownload'}
 The light blue block explains a download and/or installations procedure. It always refers to a download link.
 ```
 
@@ -221,91 +225,4 @@ This work is licensed under a [Creative Commons Attribution 4.0 International Li
 
 ***
 
-## General Setup {-}
-
-**Global Options**
-
-```{r label = "global-options", highlight=TRUE, collapse=TRUE}
-
-### setting up working environment
-### for details see: https://yihui.name/knitr/options/
-knitr::opts_chunk$set(
-        collapse = T,
-        echo = T,
-        message = T,
-        error = T,
-        warning = T,
-        comment = '##',
-        highlight = T,
-        prompt = F,
-        strip.white = T,
-        tidy = T
-        )
-
-```
-
-
-**Installing and loading R packages**
-
-
-```{r installing-and-loading-R-packages}
-
-### accompanying R package: https://github.com/gitrman/itns
-if (!require("itns"))
-        {remotes::install_github("gitrman/itns", 
-                         build = TRUE, build_opts = c("--no-resave-data", "--no-manual"))
-        library("itns")}
-
-
-### https://www.tidyverse.org/
-if (!require("tidyverse"))
-        {install.packages("tidyverse", repos = 'http://cran.wu.ac.at/')
-        library(tidyverse)}
-
-### above command installed and loaded the core tidyverse packages:
-# ggplot2: data visualisation
-# tibble:  a modern take on data frames
-# tidyr:   data tidying
-# readr:   data import (csv, tsv, fwf)
-# purrr:   functional R programming
-# dplyr:   data (frame) manipulation
-# stringr: string manipulation
-# forcats: working with categorial varialbes
-
-
-### to calculate mode:
-if (!require("modeest"))
-        {install.packages("modeest", repos = 'http://cran.wu.ac.at/')
-        library(modeest)}
-
-# I am going to use the `janitor` package for calculating table totals
-if (!require("janitor"))
-        {install.packages("janitor", repos = 'http://cran.wu.ac.at/')
-        library(janitor)}
-
-### install "checkr" to test code submissions in learnr (and potentially other) tutorials
-### there is also a problem in line 639 in "vignettes/checkr.Rmd"
-### I have changed version hoping that 0.6 is unsensible to the "older" CRAN version (0.4) and does not update
-if (!require("checkr"))
-        {remotes::install_github("petzi53/checkr2", 
-                                 build = TRUE, build_opts = c("--no-resave-data", "--no-manual"))
-        library(checkr)}
-
-if (!require("itns"))
-        {remotes::install_github("gitrman/itns", 
-                         build = TRUE, build_opts = c("--no-resave-data", "--no-manual"))
-        library("itns")}
-
-
-```
-
-**Theme adaption for the graphic display with `ggplot2`**
-
-```{r generate-my-own-theme}
-
-my_theme <- theme_light() +
-        theme(plot.title = element_text(size = 10, face = "bold", hjust = 0.5)) +
-        theme(plot.background = element_rect(color = NA, fill = NA)) +
-        theme(plot.margin = margin(1, 0, 0, 0, unit = 'cm'))
-```
 

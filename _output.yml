@@ -8,6 +8,7 @@ bookdown::gitbook:
   css: "css/mystyle.css"
   config:
     toc:
+      collapse: section
       before: |
         <li><a href="./">itns-exercises</a></li>
       after: |
