@@ -108,32 +108,36 @@ I will explain the details of my decisions in the [appendix](#h5p-content-types)
 H5P is a potent tool with many different types of exercises ("content types" in H5P parlance). At the moment of this writing, I have uploaded 47 of these modules. But not every content type is appropriate for _itns-solution_.
 
 
-The following table lists the 20 used content types, their functionality, and appearance in the chapter sections.
+The following table lists the 20 used content types, functionality, and (predominant) learning type. 
 
-| Content Type             | Functionality                                       | Learning | Video | Glossary | Bulk | Recap | Assessment | R |
-|--------------------------|-----------------------------------------------------|:--------:|:-----:|:--------:|:----:|:-----:|:----------:|:-:|
-| Accordion                | Vertically stacked expandable items                 |     I    |       |     X    |      |       |            |   |
-| Advanced Fill the Blanks | Missing word (dropdown)                             |    II    |       |     X    |   X  |       |            |   |
-| Advanced Fill the Blanks | Missing word (blanks)                                |   III   |       |     X    |   X  |       |            |   |
-| Course Presentation      | Interactive slides                                  |  II,III  |       |          |      |       |      X     |   |
-| Dialog Cards             | Text-based turning cards                            |     I    |       |     X    |      |       |            |   |
-| Documentation Tool       | Form wizard with text export                        |    III   |       |          |   X  |       |            |   |
-| Drag & Drop              | Drag & Drop with images                             |    II    |   X   |          |   X  |       |            |   |
-| Drag the Words           | Drag & Drop with text                               |    II    |   X   |     X    |   X  |       |      X     |   |
-| Fill in the Blanks       | Missing word (blanks)                               |    III   |   X   |          |      |       |      X     |   |
-| Find Multiple Hotspots   | Many hotspots to find                               |    II    |   X   |          |   X  |       |            |   |
-| Flash Cards              | Text and/or image based flash cards with repetition |    II    |       |     X    |      |       |            |   |
-| Iframe Embedder          | Embed URL                                           |  II,III  |       |          |      |       |            | X |
-| Image Hotspots           | Explore image hotspots                              |     I    |   X   |          |   X  |       |            |   |
-| Image Sequencing         | Sort images                                         |    II    |       |          |   X  |       |            |   |
-| Interactive Video        | Videos with educational interactions                |   I,II   |   X   |          |      |       |            |   |
-| Mark the Words           | Highlight words in a text                           |    II    |   X   |          |   X  |       |      X     |   |
-| Memory Game              | Image pairing                                       |    II    |       |     X    |      |       |            |   |
-| Multiple Choice          | Single & multiple-choice questions                  |    II    |   X   |          |   X  |       |      X     |   |
-| Question Set             | Sequence of various question types (Quiz)           |  II,III  |   X   |          |      |       |      X     |   |
-| Summary                  | Choose correct statements                           |    II    |   X   |          |      |   X   |            |   |
-| True/False Question      | True/false questions                                |    II    |   X   |          |   X  |       |      X     |   |
+| Content Type             | Functionality                                       | Learning |
+|--------------------------|-----------------------------------------------------|:--------:|
+| Accordion                | Vertically stacked expandable items                 |     I    |
+| Advanced Fill the Blanks | Missing word (dropdown)                             |    II    |
+| Advanced Fill the Blanks | Missing word (blanks)                               |   III    |
+| Course Presentation      | Interactive slides                                  |  I,II,III  |
+| Dialog Cards             | Text-based turning cards                            |     I    |
+| Documentation Tool       | Form wizard with text export                        |    III   |
+| Drag & Drop              | Drag & Drop with images                             |    II    |
+| Drag the Words           | Drag & Drop with text                               |    II    |
+| Fill in the Blanks       | Missing word (blanks)                               |    III   |
+| Find Multiple Hotspots   | Many hotspots to find                               |    II    |
+| Flash Cards              | Text and/or image based flash cards with repetition |    II    |
+| Iframe Embedder          | Embed URL                                           |  II,III  |
+| Image Hotspots           | Explore image hotspots                              |     I    |
+| Image Sequencing         | Sort images                                         |    II    |
+| Interactive Video        | Videos with educational interactions                |   I,II,III   |
+| Mark the Words           | Highlight words in a text                           |    II    |
+| Memory Game              | Image pairing                                       |    II    |
+| Multiple Choice          | Single & multiple-choice questions                  |    II    |
+| Question Set             | Sequence of various question types (Quiz)           |  II,III  |
+| Summary                  | Choose correct statements                           |    II    |
+| True/False Question      | True/false questions                                |    II    |
 
+There are two comments on this table:
+
++ `Advanced Fill in the Blank` comes in two versions: Either offering a dropdown menu with suggestions (Learning mode II) or just blanks where you have to fill in the correct text (Learning mode III).
++ Some content types have two different learning modes. The reason is that these content types are frameworks where you can put different kinds of other content types in it. For instance: An interactive video explains something (Learning mode I), can offer quizzes of different types (Learning mode II and sometimes III), and ask for a free text answer (Learning mode III).
 
 ## Structure Of Chapter Exercises {-} 
 
