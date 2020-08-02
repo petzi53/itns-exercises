@@ -37,7 +37,7 @@ For instance, as you can see, there is no single usage of the H5P content type `
 Parenthesises around the Shiny apps mean that a working version available but still missing some features.
 
 | Content Type           |   1   | 2     | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15 | 16 | Sum |
-|------------------------|:-----:|-------|---|---|---|---|---|---|---|----|----|----|----|----|----|----|-----|
+|------------------------|:-----:|:-------:|---|---|---|---|---|---|---|----|----|----|----|----|----|----|-----|
 | Accordion              |  2/-  | 1/-   |   |   |   |   |   |   |   |    |    |    |    |    |    |    |     |
 | Course                 |  -/-  | 3/-   |   |   |   |   |   |   |   |    |    |    |    |    |    |    |     |
 | Dialog Cards           |  1/-  | 1/-     |   |   |   |   |   |   |   |    |    |    |    |    |    |    |     |
