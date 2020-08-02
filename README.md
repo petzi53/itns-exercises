@@ -6,6 +6,11 @@
 + interactive demonstrations developed with [learnr](https://rstudio.github.io/learnr/) and [Shiny](https://shiny.rstudio.com/)
 + R tutorials for the end-of-chapter exercises of _itns_
 
+
+```{r child = 'includes/progress-table.Rmd'}
+```
+
+
 GitHub resources of this book can be found in two places:
 
 + [`itns-exercises`](https://github.com/petzi53/itns-exercises/) (link to the repo on the top of this book) is the central part of the book containing all H5P-exercises and the R tutorials/solutions for the end-of-chapter exercises. 
