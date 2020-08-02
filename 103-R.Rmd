@@ -6,7 +6,7 @@
 
 ### Store variables
 
-```{r 03-generate-freeze, echo=FALSE}
+```{r 03-generate-freeze, echo=T}
 # Store all variables up to this line. 
 # Later generated variables will be deleted after the end of each chapter
 freeze <- ls()

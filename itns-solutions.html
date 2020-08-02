@@ -93,22 +93,25 @@ Thanks for providing resources: <a href="https://icons8.com" target="blank">icon
 <!--bookdown:title:start-->
 <div id="itns-solutions" class="section level1">
 <h1><span class="header-section-number">Chapter 1</span> itns-solutions</h1>
-<p><img src="img/cover-new-statistics-min.png" width="250" height="375" alt="Cover image" align="right" style="margin: 0 1em 0 1em"/></p>
-<p>This website <a href="https://bookdown.org/pbaumgartner/itns-exercises/">itns-exercises</a> is an (inoffical) companion book for <a href="https://www.routledgetextbooks.com/textbooks/9781138825529/">Introduction to the New Statistics</a> (abbreviated <i>itns</i>). It offers</p>
+<p><a href="https://bookdown.org/pbaumgartner/itns-exercises/">itns-exercises</a> is an (inoffical) companion book for <a href="https://www.routledgetextbooks.com/textbooks/9781138825529/">Introduction to the New Statistics</a> (abbreviated <i>itns</i>). It offers</p>
 <ul>
 <li>interactive exercises and quizzes designed with <a href="https://h5p.org/">H5P</a></li>
-<li>interactive demonstrations developed with <a href="https://shiny.rstudio.com/">Shiny</a></li>
+<li>interactive demonstrations developed with <a href="https://rstudio.github.io/learnr/">learnr</a> and <a href="https://shiny.rstudio.com/">Shiny</a></li>
 <li>R tutorials for the end-of-chapter exercises of <em>itns</em></li>
 </ul>
-<p>Published so far are exercises for chapter 1-4: <a href="https://bookdown.org/pbaumgartner/itns-exercises/" class="uri">https://bookdown.org/pbaumgartner/itns-exercises/</a></p>
+<p><code>{r child = 'includes/progress-table.Rmd'}</code></p>
+<p>GitHub resources of this book can be found in two places:</p>
+<ul>
+<li><a href="https://github.com/petzi53/itns-exercises/"><code>itns-exercises</code></a> (link to the repo on the top of this book) is the central part of the book containing all H5P-exercises and the R tutorials/solutions for the end-of-chapter exercises.</li>
+<li><a href="https://github.com/petzi53/itns-interactive/"><code>itns-interactive</code></a> supplements the main book with exercises written in <code>learnr</code> and <code>shiny</code>. Whereas the content of the main book is published at the <a href="https://bookdown.org/pbaumgartner/itns-exercises">bookdown server</a> are the interactive demonstrations of this repository published at the <a href="https://www.shinyapps.io/">shinyapps server</a>. Links for specific shinyapps exercises are under the appropriate section heading of this book.</li>
+</ul>
+<p>Published so far are about 20%: <a href="https://bookdown.org/pbaumgartner/itns-exercises/" class="uri">https://bookdown.org/pbaumgartner/itns-exercises/</a></p>
 <p>Chapter 3 and 4 of the R tutorials are also published as stand alone versions:</p>
 <ul>
-<li><p><a href="https://rpubs.com/pbaumgartner/itns-03" class="uri">https://rpubs.com/pbaumgartner/itns-03</a></p></li>
-<li><p><a href="https://rpubs.com/pbaumgartner/itns-04" class="uri">https://rpubs.com/pbaumgartner/itns-04</a></p></li>
-<li><p><code>itns-exercises</code> is the central part of the book containing all H5P-exercises and the R solutions for the end-of-chapter exercises.</p></li>
-<li><p><code>itns-interactive</code> supplements the main book with exercises written in <code>learnr</code> and <code>shiny</code>. Whereas the content of the main book is published at the <a href="https://bookdown.org/">bookdown server</a> are the interactive demonstrations of this repository published of the <a href="https://www.shinyapps.io/">shinyapps server</a>.</p></li>
+<li><a href="https://rpubs.com/pbaumgartner/itns-03" class="uri">https://rpubs.com/pbaumgartner/itns-03</a></li>
+<li><a href="https://rpubs.com/pbaumgartner/itns-04" class="uri">https://rpubs.com/pbaumgartner/itns-04</a></li>
 </ul>
-<p>At the moment (July 2020) 43 exercises, 9 quizzes and some end-of-chapter exercises (chapter 3 and 4 of <em>itns</em>) are available. Additionally there are finished the following interactive demonstrations:</p>
+<p>At the moment (July 2020) 43 exercises, 9 quizzes and some end-of-chapter exercises (chapter 3 and 4 of <em>itns</em>) are available. Additionally the following interactive demonstrations are also finished:</p>
 <ul>
 <li><a href="https://pbaumgartner.shinyapps.io/itns-research-steps/">Order Steps of the Research Process</a></li>
 <li><a href="https://pbaumgartner.shinyapps.io/histogram/">Histogram &amp; Bins</a></li>
@@ -165,7 +168,7 @@ gitbook.start({
 },
 "download": null,
 "toc": {
-"collapse": "subsection"
+"collapse": "section"
 },
 "info": true,
 "search": false

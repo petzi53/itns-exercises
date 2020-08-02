@@ -73,17 +73,17 @@ There are different strategies to categorize learning modes. In contrast to [a v
 
 Oriented on broad categories of cognitive processes, I distinguish grosso modo only three different learning respectively teaching types:
 
-- **Learning I / Instruction:** Students acquire static knowledge from the presented content via reading, listening, and watching. The main cognitive task in this mode is memorizing and retrieving knowledge.
+- **Learning 1️⃣ / Instruction:** Students acquire static knowledge from the presented content via reading, listening, and watching. The main cognitive task in this mode is memorizing and retrieving knowledge.
     
-- **Learning II / Interaction:** Students acquire dynamic knowledge via exercises where they have to apply their static knowledge. To facilitate and stabilize their education, they get feedback on the results of their practice. The main cognitive task in Learning II is applying & analyzing specific situations.
+- **Learning 2️⃣ / Interaction:** Students acquire dynamic knowledge via exercises where they have to apply their static knowledge. To facilitate and stabilize their education, they get feedback on the results of their practice. The main cognitive task in Learning 2️⃣ is applying & analyzing specific situations.
 
-- **Learning III / Construction:** Students create their knowledge by adapting and modifying learned procedures for challenging situations. Here the main cognitive task is incorporating skills into their body (performance) and insights into their personal experiences for mastering their life.
+- **Learning 3️⃣ / Construction:** Students create their knowledge by adapting and modifying learned procedures for challenging situations. Here the main cognitive task is incorporating skills into their body (performance) and insights into their personal experiences for mastering their life.
     
 My three-part distinction of learning modes represents a hierarchy from more comfortable to more challenging learning modes. It conforms to the more detailed six differences of cognitive processes in the revised Bloom’sche taxonomy developed by Anderson, Krathwohl, and colleagues [@anderson_revising_2002; @krathwohl_revision_2002; @anderson_taxonomy_2000]: 
 
-+ remember, understand (Learning I)
-+ apply, analyze (Learning II)
-+ evaluate, create (Learning III)
++ remember, understand (Learning 1️⃣)
++ apply, analyze (Learning 2️⃣)
++ evaluate, create (Learning 3️⃣)
 
 
 ```{r label='figure-anderson-krahtwohl-taxonomy', fig.align='center', out.width="80%", echo=FALSE}
@@ -94,7 +94,7 @@ knitr::include_graphics("img/chap00/AK-Taxonomy-min.png")
 
 ### Multiple Representations {-}
 
-In _itns-solutions_, I am applying the old but time-proven concept of _multiple representations_ [@ainsworth_functions_1999; @van_someren_learning_1998]: The same content is learned/experienced with several distinctive exercises. This approach is not entirely redundant as each activity addresses the brain capacity in different ways. Additionally, I sorted the same questions often differently. To give an example: I am using the same text to fill in the blanks from a prepared list of words, or via a dropdown menu (both are Learning II) and to write the correct concept without help (Learning III).
+In _itns-solutions_, I am applying the old but time-proven concept of _multiple representations_ [@ainsworth_functions_1999; @van_someren_learning_1998]: The same content is learned/experienced with several distinctive exercises. This approach is not entirely redundant as each activity addresses the brain capacity in different ways. Additionally, I sorted the same questions often differently. To give an example: I am using the same text to fill in the blanks from a prepared list of words, or via a dropdown menu (both are Learning 2️⃣) and to write the correct concept without help (Learning 3️⃣).
 
 ### Self-Determined Learner {-}
 
@@ -105,55 +105,60 @@ I will explain the details of my decisions in the [appendix](#h5p-content-types)
 ## Types of Exercises {-}
 
 
-H5P is a potent tool with many different types of exercises ("content types" in H5P parlance). At the moment of this writing, I have uploaded 47 of these modules. But not every content type is appropriate for _itns-solution_.
-
+H5P is a potent tool with many different types of exercises ("content types" in H5P parlance). But not every content type is appropriate for _itns-solution_.
 
 The following table lists the 20 used content types, functionality, and (predominant) learning type. 
 
 | Content Type             | Functionality                                       | Learning |
 |--------------------------|-----------------------------------------------------|:--------:|
-| Accordion                | Vertically stacked expandable items                 |     I    |
-| Advanced Fill the Blanks | Missing word (dropdown)                             |    II    |
-| Advanced Fill the Blanks | Missing word (blanks)                               |   III    |
-| Course Presentation      | Interactive slides                                  |  I,II,III  |
-| Dialog Cards             | Text-based turning cards                            |     I    |
-| Documentation Tool       | Form wizard with text export                        |    III   |
-| Drag & Drop              | Drag & Drop with images                             |    II    |
-| Drag the Words           | Drag & Drop with text                               |    II    |
-| Fill in the Blanks       | Missing word (blanks)                               |    III   |
-| Find Multiple Hotspots   | Many hotspots to find                               |    II    |
-| Flash Cards              | Text and/or image based flash cards with repetition |    II    |
-| Iframe Embedder          | Embed URL                                           |  II,III  |
-| Image Hotspots           | Explore image hotspots                              |     I    |
-| Image Sequencing         | Sort images                                         |    II    |
-| Interactive Video        | Videos with educational interactions                |   I,II,III   |
-| Mark the Words           | Highlight words in a text                           |    II    |
-| Memory Game              | Image pairing                                       |    II    |
-| Multiple Choice          | Single & multiple-choice questions                  |    II    |
-| Question Set             | Sequence of various question types (Quiz)           |  II,III  |
-| Summary                  | Choose correct statements                           |    II    |
-| True/False Question      | True/false questions                                |    II    |
+| Accordion                | Vertically stacked expandable items                 |     1️⃣    |
+| Advanced Fill the Blanks | Missing word (dropdown)                             |     2️⃣    |
+| Advanced Fill the Blanks | Missing word (blanks)                               |     3️⃣    |
+| Course Presentation      | Interactive slides                                  |   1️⃣ 2️⃣ 3️⃣  |
+| Dialog Cards             | Text-based turning cards                            |     1️⃣    |
+| Documentation Tool       | Form wizard with text export                        |     3️⃣    |
+| Drag & Drop              | Drag & Drop with images                             |     2️⃣    |
+| Drag the Words           | Drag & Drop with text                               |     2️⃣    |
+| Fill in the Blanks       | Missing word (blanks)                               |     3️⃣    |
+| Find Multiple Hotspots   | Many hotspots to find                               |     2️⃣    |
+| Flash Cards              | Text and/or image based flash cards with repetition |     2️⃣    |
+| Iframe Embedder          | Embed URL                                           |    2️⃣,3️⃣   |
+| Image Hotspots           | Explore image hotspots                              |     1️⃣    |
+| Image Sequencing         | Sort images                                         |     2️⃣    |
+| Interactive Video        | Videos with educational interactions                |   1️⃣,2️⃣,3️⃣  |
+| Mark the Words           | Highlight words in a text                           |     2️⃣    |
+| Memory Game              | Image pairing                                       |     2️⃣    |
+| Multiple Choice          | Single & multiple-choice questions                  |     2️⃣    |
+| Question Set             | Sequence of various question types (Quiz)           |    2️⃣,3️⃣   |
+| Summary                  | Choose correct statements                           |     2️⃣    |
+| True/False Question      | True/false questions                                |     2️⃣    |
 
 There are two comments on this table:
 
-+ `Advanced Fill in the Blank` comes in two versions: Either offering a dropdown menu with suggestions (Learning mode II) or just blanks where you have to fill in the correct text (Learning mode III).
-+ Some content types have two different learning modes. The reason is that these content types are frameworks where you can put different kinds of other content types in it. For instance: An interactive video explains something (Learning mode I), can offer quizzes of different types (Learning mode II and sometimes III), and ask for a free text answer (Learning mode III).
++ `Advanced Fill in the Blank` comes in two versions: Either offering a dropdown menu with suggestions (Learning 2️⃣) or just blanks where you have to fill in the correct text (Learning 3️⃣).
++ Some content types have two different learning modes. The reason is that these content types are frameworks where you can put different kinds of other content types in it. For instance: An interactive video explains something (Learning 1️⃣), can offer quizzes of different type (Learning 2️⃣) and ask for a free text answer (Learning 3️⃣).
+
+
+```{r child = 'includes/progress-table.Rmd'}
+```
+
+
 
 ## Structure Of Chapter Exercises {-} 
 
 I have grouped all exercises into a recurring structure of sections:
 
-+ **Video:** Each chapter starts with one or several interactive videos. I have taken the videos from the [Routledge website](https://routledgetextbooks.com/textbooks/9781138825529/student.php).  The video exercises support Learning I (watching the video explanations) but also Learning II as they contain interactive activities too.
-+ **Glossary:** To learn the glossary entries, I have provided several exercises ("multiple representations"). Learners do not need to practice all different types of activities. As there is a hierarchy in the level of difficulty, they could start with an exercise from level "Learning I" and continue immediately with one of the higher levels. Every glossary section follows the same pattern of exercise types:
++ **Video:** Each chapter starts with one or several interactive videos. I have taken the videos from the [Routledge website](https://routledgetextbooks.com/textbooks/9781138825529/student.php).  The video exercises support Learning 1️⃣ (watching the video explanations) but also Learning 2️⃣ as they contain interactive activities too.
++ **Glossary:** To learn the glossary entries, I have provided several exercises ("multiple representations"). Learners do not need to practice all different types of activities. As there is a hierarchy in the level of difficulty, they could start with an exercise from level "Learning 1️⃣" and continue immediately with one of the higher levels. Every glossary section follows the same pattern of exercise types:
 
-    - Learning I: Accordion, Dialog Cards
-    - Learning II: Drag Words, Flash Cards, Advanced Fill in the Blanks (dropdown menu)
-    - Learning III: (Advanced) Fill in the Blanks (without help)<br /><br />
+    - Learning 1️⃣: Accordion, Dialog Cards
+    - Learning 2️⃣: Drag Words, Flash Cards, Advanced Fill in the Blanks (dropdown menu)
+    - Learning 3️⃣: (Advanced) Fill in the Blanks (without help)<br /><br />
 
 
 + **Content:** Unter the next section, I summarize activities for the central part of the chapter covering the specific content parts students have to learn respectively to acquire. But instead of using the generic name "Content", I generated different names for this segment inspired by chapter subject and/or title. There is no fixed structure as the appropriate exercises depend on the topic presented. But generally, this part contains every conceivable suitable task. To better understand statistical concepts, this section also uses sometimes interactive visualizations developed with the [shiny](https://shiny.rstudio.com/) R packages. 
 
-+ **Recap:** Every chapter has a section on reporting and a list of take-home messages. Students may recapitulate the central concepts of each chapter with the _Summary_-task (Learning II). The exercises for the reporting sections vary between the content types of _Accordion_ (Learning I), _Summary_ (Learning II), and _Advanced Fill in the Blanks_ or _Documentation Tool_  (Learning III). 
++ **Recap:** Every chapter has a section on reporting and a list of take-home messages. Students may recapitulate the central concepts of each chapter with the _Summary_-task (Learning 2️⃣). The exercises for the reporting sections vary between the content types of _Accordion_ (Learning 1️⃣), _Summary_ (Learning 2️⃣), and _Advanced Fill in the Blanks_ or _Documentation Tool_  (Learning 3️⃣). 
 
 + **Assessment:** Exercises under the _Assessment_ heading are somewhat different. They consist (similar to _Interactive Video_) of a pool of varying content types organized either by the content type _Question set_ (quizzes) or _Course Presentation_. 
 
@@ -166,11 +171,11 @@ I have grouped all exercises into a recurring structure of sections:
 
 + **R Tutorial:** This last part of each chapter contains exercises to learn R. I have separated this part from the other chapter content as not all people want to get into the R programming language details. It contains three types of material:
 
-   - There is an explicatory part showing the usage of R and its effects (Learning I). Mostly this section includes applications of the [LearnR](https://rstudio.github.io/learnr/) and [Shiny](https://rstudio.com/products/shiny/) packages.
+   - There is an explicatory part showing the usage of R and its effects (Learning 1️⃣). Mostly this section includes applications of the [LearnR](https://rstudio.github.io/learnr/) and [Shiny](https://rstudio.com/products/shiny/) packages.
 
-    - Another part uses the LearnR packages for stand-alone R practices (Learning II).
+    - Another part uses the LearnR packages for stand-alone R practices (Learning 2️⃣).
 
-    - Finally, there is a section where learners will find a complete R solution to the end-of-chapter exercises. Students who have already acquired some R programming knowledge should try to solve the book exercises by themself and compare their answers with my sample solutions (Learning III). 
+    - Finally, there is a section where learners will find a complete R solution to the end-of-chapter exercises. Students who have already acquired some R programming knowledge should try to solve the book exercises by themself and compare their answers with my sample solutions (Learning 3️⃣). 
 
 
 ## Conventions Used In This Book {-}
