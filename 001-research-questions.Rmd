@@ -49,7 +49,7 @@ If you dont know how to use the video exercise go to the [help picture in the ap
 
 <iframe src="https://peter.baumgartner.name/wp-admin/admin-ajax.php?action=h5p_embed&id=57" width="960" height="927" frameborder="0" allowfullscreen="allowfullscreen"></iframe><script src="https://peter.baumgartner.name/wp-content/plugins/h5p/h5p-php-library/js/h5p-resizer.js" charset="UTF-8"></script>
 
-## Poll Intuitions (True/False) {#chap01-poll-intuitions-true-false}
+## Poll Intuitions {#chap01-poll-intuitions-true-false}
 
 <iframe src="https://peter.baumgartner.name/wp-admin/admin-ajax.php?action=h5p_embed&id=30" width="958" height="246" frameborder="0" allowfullscreen="allowfullscreen"></iframe><script src="https://peter.baumgartner.name/wp-content/plugins/h5p/h5p-php-library/js/h5p-resizer.js" charset="UTF-8"></script>
 
@@ -66,7 +66,14 @@ If you dont know how to use the video exercise go to the [help picture in the ap
 
 ### Interactive Video {#chap01-video-header-not-in-use}
 
-see [Video under heading of 'Interactive Video'](#chap01-video-research-questions)
+
+```{block2, chap01-go-to-video, type='rmdinquiry'}
+
+See the [Video under heading of 'Interactive Video'](#chap01-video-research-questions).
+```
+
+
+
 
 ### Order of Steps {#chap01-order-of-steps}
 
@@ -80,7 +87,14 @@ see [Video under heading of 'Interactive Video'](#chap01-video-research-question
 <iframe src="https://peter.baumgartner.name/wp-admin/admin-ajax.php?action=h5p_embed&id=37" width="960" height="760" frameborder="0" allowfullscreen="allowfullscreen"></iframe><script src="https://peter.baumgartner.name/wp-content/plugins/h5p/h5p-php-library/js/h5p-resizer.js" charset="UTF-8"></script>
 -->
 
-Integrating this exercise into this books destroys the internal linking. It seems to me a bug of the H5P image sequenceing content type. Therefore I have here just provided a <a href="https://peter.baumgartner.name/wp-admin/admin-ajax.php?action=h5p_embed&id=37" target="_blank">link to my WordPress Blog</a>.
+
+```{block2, chap01-image-sequencing, type='rmdinquiry'}
+Integrating this exercise into this books destroys the internal linking. It seems to me a bug of the H5P image sequenceing content type. 
+
+Therefore I have provided a <a href="https://peter.baumgartner.name/wp-admin/admin-ajax.php?action=h5p_embed&id=37" target="_blank">link to my WordPress Blog</a>.
+```
+
+
 
 
 #### Estimation Plan (Summary) {#chap01-estimation-plan-summary}
@@ -90,7 +104,12 @@ Integrating this exercise into this books destroys the internal linking. It seem
 
 #### Research & Estimation (LearnR) {#chap01-steps-learnr}
 
-<iframe src="https://pbaumgartner.shinyapps.io/itns-research-steps/#section-research-process" width="958" height="800" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
+
+```{block2, 03-shiny-order-steps, type='rmdinquiry'}
+Go to Shiny app: [Order Steps of the Research Process](https://pbaumgartner.shinyapps.io/itns-research-steps/#section-research-process).
+```
+
+
 
 
 ## Meta-Analysis {#chap01-meta-analysis}

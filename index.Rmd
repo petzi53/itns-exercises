@@ -202,7 +202,7 @@ The dark blue block offers you some essential information, tip, or hint.
 ```
 
 ```{block2, demo-inquiry, type='rmdinquiry'}
-The black-colored block recommends further material and explains how to get this additional content. In the case of online-material, it provides the link.
+The gray-colored block recommends further material and provides the link(s) to the additional resource(s).
 ```
 
 ```{block2, demo-warning, type='rmdwarning'}
