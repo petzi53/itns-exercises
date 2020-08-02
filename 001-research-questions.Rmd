@@ -103,7 +103,6 @@ Integrating this exercise into this books destroys the internal linking. It seem
 
 ### Point Estimates in Forest Plot (Find Multiple Hotspots) {#chap01-find-point-estimates-find-hotspots}
 
-<center>**Find the locations of all point estimates by clicking on the correct places of the image.**</center>
 <iframe src="https://peter.baumgartner.name/wp-admin/admin-ajax.php?action=h5p_embed&id=27" width="958" height="455" frameborder="0" allowfullscreen="allowfullscreen"></iframe><script src="https://peter.baumgartner.name/wp-content/plugins/h5p/h5p-php-library/js/h5p-resizer.js" charset="UTF-8"></script>
 
 ## Reporting (Accordion) {#chap01-reporting-accordion}
