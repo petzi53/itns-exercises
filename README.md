@@ -7,7 +7,29 @@
 + R tutorials for the end-of-chapter exercises of _itns_
 
 
-## Progress Table {-}
+**Resources**
+
+GitHub resources of this book can be found in two places:
+
++ [`itns-exercises`](https://github.com/petzi53/itns-exercises/) (link to the repo on the top of this book) is the central part of the book containing all H5P-exercises and the R tutorials/solutions for the end-of-chapter exercises. 
++ [`itns-interactive`](https://github.com/petzi53/itns-interactive/) supplements the main book with exercises written in `learnr` and `shiny`. Whereas the content of the main book is published at the [bookdown server](https://bookdown.org/pbaumgartner/itns-exercises) are the interactive demonstrations of this repository published at the [shinyapps server](https://www.shinyapps.io/). Links for specific shinyapps exercises are under the appropriate section heading of this book.
+
+Published so far are about 20%: https://bookdown.org/pbaumgartner/itns-exercises/
+
+Chapter 3 and 4 of the R tutorials are also published as stand alone versions:
+
+* https://rpubs.com/pbaumgartner/itns-03
+* https://rpubs.com/pbaumgartner/itns-04
+
+At the moment (July 2020) 43 exercises, 9 quizzes and some end-of-chapter exercises (chapter 3 and 4 of _itns_) are available. Additionally the following interactive demonstrations are also finished:
+
++ [Order Steps of the Research Process](https://pbaumgartner.shinyapps.io/itns-research-steps/)
++ [Histogram & Bins](https://pbaumgartner.shinyapps.io/histogram/)
++ [Picture Data (Histogram & Dotplot with Descriptive Measures)](https://pbaumgartner.shinyapps.io/picture-data/)
+
+***
+
+**Progress Table**
 
 The following table gives you an overview of the H5P content types used by different chapters. The number before the slash counts the number of H5P content types. The second number sums up the kind of exercises hidden behind frameworks like `Course Presentation`, `Interactive Video`, and `Questions Set`. 
 
@@ -37,22 +59,3 @@ For instance, as you can see, there is no single usage of the H5P content type `
 | shinyapps.io           |  1/-  | (2)   |   |   |   |   |   |   |   |    |    |    |    |    |    |    |     |
 | Sum                    | 23/32 | 21/40 |   |   |   |   |   |   |   |    |    |    |    |    |    |    |     |
 
-
-
-GitHub resources of this book can be found in two places:
-
-+ [`itns-exercises`](https://github.com/petzi53/itns-exercises/) (link to the repo on the top of this book) is the central part of the book containing all H5P-exercises and the R tutorials/solutions for the end-of-chapter exercises. 
-+ [`itns-interactive`](https://github.com/petzi53/itns-interactive/) supplements the main book with exercises written in `learnr` and `shiny`. Whereas the content of the main book is published at the [bookdown server](https://bookdown.org/pbaumgartner/itns-exercises) are the interactive demonstrations of this repository published at the [shinyapps server](https://www.shinyapps.io/). Links for specific shinyapps exercises are under the appropriate section heading of this book.
-
-Published so far are about 20%: https://bookdown.org/pbaumgartner/itns-exercises/
-
-Chapter 3 and 4 of the R tutorials are also published as stand alone versions:
-
-* https://rpubs.com/pbaumgartner/itns-03
-* https://rpubs.com/pbaumgartner/itns-04
-
-At the moment (July 2020) 43 exercises, 9 quizzes and some end-of-chapter exercises (chapter 3 and 4 of _itns_) are available. Additionally the following interactive demonstrations are also finished:
-
-+ [Order Steps of the Research Process](https://pbaumgartner.shinyapps.io/itns-research-steps/)
-+ [Histogram & Bins](https://pbaumgartner.shinyapps.io/histogram/)
-+ [Picture Data (Histogram & Dotplot with Descriptive Measures)](https://pbaumgartner.shinyapps.io/picture-data/)
