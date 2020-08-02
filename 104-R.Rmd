@@ -16,7 +16,7 @@ As there are only few R calculations in this chapter I have added an additional 
 
 
 -->
-## Find z scores
+## Find z scores {#R04-find-z-scores}
 
 > For a standardized exam of statistics skill, scores are normally distributed: μ = 80, σ = 5. Find each student’s _z_ score:
 
@@ -40,7 +40,7 @@ b. $z = 2$
 c. $z = -1$
 d. $z = 3$
 
-## Find percentage of better students
+## Find percentage of better students {#R04-find-better-students}
 
 > For each student in Exercise 1, use R to find what percent of students did better. (Assume _X_ is a continuous variable.)
 
@@ -56,24 +56,24 @@ I am using the `pnorm` command. You can get an explanation by using the help com
 
 > Percent better: a. 50%; b. 2.28%; c. 84.1%; d. 0.1%.
 
-## Calculation of SE
+## Calculation of SE {#R04-calculation-of-se}
 
 > Gabriela and Sylvia are working as a team for their university’s residential life program. They are both tasked with surveying students about their satisfaction with the dormitories. Today, Gabriela has managed to survey 25 students; Sylvia has managed to survey 36 students. The satisfaction scale they are using has a range from 1 to 20 and is known from previous surveys to have _σ_ = 5.
 
-### Estimation 1
+### Estimation 1 {#R04-estimation-1}
 
 > No mathematics, just think: which sample will have the smaller SE: the one collected by
 Gabriela or the one collected by Sylvia?
 
 > Sylvia’s sample will have the smaller SE because she has collected a larger sample.
 
-### Estimation 2
+### Estimation 2 {#R04-estimation-2}
 
 > When the two combine their data, will this shrink the SE or grow it?
 
 > Combining the two samples will yield a smaller SE.
 
-### Calculation 
+### Calculation {#R04-calculation}
 
 > Now calculate the SE for Gabriela’s sample, for Sylvia’s sample, and for the two samples
 combined.
@@ -88,13 +88,13 @@ The formula is $SE = σ / \sqrt{N}$.
 
 > For Gabriela, SE = 1; For Sylvia, SE = 0.83; Combined, SE = 0.64.
 
-### Is the sample size sufficient?
+### Is the sample size sufficient? {#R04-sample-size-sufficient}
 
 > How big a sample size is needed? Based on the combined SE you obtained, does it seem like the residential life program should send Gabriela and Sylvia out to collect more data? Why or why not? This is a judgment call, but you should be able to make relevant comments. Consider not only the SE but the range of the measurement.
 
 > What sample size is sufficient is a judgment call, which we’ll discuss further in Chapter 10. For now we can note that the combined data set provides SE = 0.64, meaning that many repeated samples would give sample mean satisfaction scores that would bounce around (i.e., form a mean heap) with standard deviation of 0.64. Given that satisfaction has a theoretical range from 1 to 20, this suggests that any one sample mean will provide a moderately precise estimate, reasonably close to the population mean. This analysis suggests we have sufficient data, although collecting more would of course most likely give us a better estimate.
 
-## Nursing home and random sampling
+## Nursing home and random sampling {#R04-nursing-home-and-random-sampling}
 
 > Rebecca works at a nursing home. She’d like to study emotional intelligence amongst the seniors at the facility (her population of interest is all the seniors living at the facility). Which of these would represent random sampling for her study?
 
@@ -106,7 +106,7 @@ The formula is $SE = σ / \sqrt{N}$.
 > c and d represent random sampling because both give each
 member of the population an equal chance to be in the study, and members of the sample are selected independently
 
-## Skewed distributions
+## Skewed distributions {#R04-skewed-distribution}
 
 > Sampling distributions are not always normally distributed, especially when the variable measured is highly skewed. Below are some variables that tend to have strong skew.
 > a) In real estate, home prices tend to be skewed. In which direction? Why might this be?
@@ -135,7 +135,7 @@ What follows are two examples for this negatively skewed distributions of age at
 because 0 is a firm minimum, and then scores extend upward from there, with many families
 having, say, 1–4 children and a small number of families having many children.
 
-## Warning sign for skewed variables
+## Warning sign for skewed variables {#R04-skewed-variable}
 
 > Based on the previous exercise, what is a caution or warning sign that a variable will be highly skewed?
 

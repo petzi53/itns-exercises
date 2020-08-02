@@ -2,7 +2,7 @@
 
 # Tutorials for 3: Picture & Describing Data {#chapter-03-R}
 
-## General Setup {#general-setup-03}
+## General Setup {#R03-general-setup}
 
 ### Store variables
 
@@ -12,7 +12,7 @@
 freeze <- ls()
 ```
 
-### Global options {#global-options-03}
+### Global options {#R03-global-options}
 
 ```{r 03-global-options, highlight=TRUE, collapse=TRUE}
 
@@ -34,7 +34,7 @@ knitr::opts_chunk$set(
 ```
 
 
-### Installing and loading R packages {#packages-03}
+### Installing and loading R packages {#R03-packages}
 
 
 ```{r 03-installing-and-loading-R-packages}
@@ -88,7 +88,7 @@ if (!require("itns"))
 
 ```
 
-### Theme adaption for the graphic display with `ggplot2` {#theme-03}
+### Theme adaption for the graphic display with `ggplot2` {R03-#theme}
 
 ```{r 03-generate-my-own-theme}
 
@@ -100,9 +100,9 @@ my_theme <- theme_light() +
 
 
 
-## Calculating decriptive statistics
+## Calculating decriptive statistics {#R03-descriptive-statistics}
 
-### Description
+### Description {#R03-description}
 
 The following table contains a set of ACT scores from a sample of college students. The ACT is a standardized college-readiness exam taken by many U.S. students; scores can range fro 1 to 36.
 
@@ -126,7 +126,7 @@ a. **Location:** Calculate the mean (_M_), median, and mode for this sample.
 b. **Spread:** Calculate the standard deviation (_s_), range and interquartile range for this sample. For _s_, fill in the two columns on the right in the table above, then use the formula to calculate _s_ yourself.
 
 
-### Solution
+### Solution {#R03-solution-1}
 
 ```{r load-data-into-vector}
 ACT <- c(26, 24, 28, 31, 20, 27, 18, 17, 21, 29, 24)
@@ -192,9 +192,9 @@ knitr::kable(ACT_df,
 
 This table has not the same information as in the book p.505. At first I tried to build it similar but this complicates everything as it is not suitable for using R.
 
-## Loading our first data set
+## Loading our first data set {#R03-loading-data-set}
 
-### Inspecting the `itns`-package
+### Inspecting the `itns`-package {#R03-itns-package}
 
 In the task description of the _itns_-book you will find the following passage (p.68):
 
@@ -217,7 +217,7 @@ To detect the name of the variables (= columns) and the data structure we use th
 # View(college_survey1) # opens the data set in the RStudio data browser
 ```
 
-### Reading the codebook for `college-survey1`
+### Reading the codebook for `college-survey1` {#R03-reading-cookbook}
 
 Even the data set is already included in the `itns` package, you still will need to go to the companion website and download the data set as you will need the code book to understand what all the variables and codes mean. To save you time I have it included here. 
 
@@ -252,11 +252,11 @@ This is data from survey of college students.  The survey was put together as a 
 * Inteligence_Value  - Measure of degree to which participant values intelligence, rated on a scale from 1 (strongly agree) to 5 (strongly agree).  Sample item: "Intelligence greatly contributes to success in life.".  See 
 * Raven_Score - % correct out of 8 items on the Raven Progressive Matrix Scale, a scale of logical thinking/IQ.   Adapted from https://www.raventest.net/.  
 
-## Distribution of positive affect scores
+## Distribution of positive affect scores {#R03-positive-affect-scores}
 
 Now we can start to visualize the different distribution as described in 2a-e (pp.68f.)
 
-### Visualize the distribution
+### Visualize the distribution {#R03-visualize-distribution}
 
 > Visualize the distribution of positive affect scores (Positive_Affect). Students rate how often they experience each of 10 positive emotions, using a scale from 1 (_not at all_) to 5 (_extremely_), then the score is the average of the 10 ratings.
 
@@ -264,7 +264,7 @@ The reference in the codebook to the PANAS scale is not valid anymore. But I fou
 
 Following the recommendation by the paper [Getting Started with the New Statistics in R](https://s3-eu-west-1.amazonaws.com/s3-euw1-ap-pe-ws4-cws-documents.ri-prod/9781138825529/SoftwareGuide/R_Guide.zip) (p.7) I am going to use the `ggplot2` package. See details to the command at the [ggplot2 web page](https://ggplot2.tidyverse.org/reference/geom_histogram.html).
 
-### Histogram
+### Histogram {#R03-histogram}
 
 ```{r dist-pos-affect-v1}
 ggplot(college_survey1, aes(positive_affect)) +
@@ -275,14 +275,14 @@ After executing the above command `ggplot2` gives us a notification and a warnin
 
 ![](img/ggplot2-positive_affect-message-min.png)
 
-#### Addressing the notification
+#### Addressing the notification {#R03-notification}
 
 <p><div class="alert alert-warning" role="alert">
 It is important to experiment with different values of the `binwidth` parameter to get a feeling about the effects of the visualization of the distribution.</div></p>
 
 I chose a binwidth of .1, meaning that I will get 40 bins as the scale goes from 1-5. 
 
-#### Addressing the warning
+#### Addressing the warning {#R03-warning}
 
 `ggplot2` warns us that there are data missing in 8 records. Look at the RStudio data browser and scroll down to check it. You will see that at the end of the file, starting with record number 231 some data are missing ("not availabe" = NA). In our next visualization we tell R to remove these missing values silently and to use the binwidth of .1.
 
@@ -291,7 +291,7 @@ ggplot(college_survey1, aes(positive_affect)) +
   geom_histogram(binwidth = .1, na.rm = TRUE) # always experiment with the binwidth
 ```
 
-### Dot plot
+### Dot plot {#R03-dot-plot}
 
 For more information about this command see: https://ggplot2.tidyverse.org/reference/geom_dotplot.html
 
@@ -333,7 +333,7 @@ dotchart = dotchart +
 dotchart
 ```
 
-### Interpretation
+### Interpretation {#R03-interpretation}
 
 > Describe the distribution you see, noting the location, spread, and shape, and the number of major peaks.
 
@@ -346,7 +346,7 @@ s
 > Positive affect is relatively normally distributed—there is a single, strong peak and the distribution is fairly symmetrical. The mean score of 3.43 is a little above the midpoint of the 1–5 scale, indicating that students on average feel moderate levels of positive affect. There is wide spread, with _s_ = 0.71 and scores ranging across almost the full range.
 
 
-## Distribution of student age
+## Distribution of student age {#R03-student-age}
 
 The next exercises are similar. I am going to produce just the histograms.
 
@@ -363,7 +363,7 @@ s
 
 > There is strong positive skew, with most students aged 18–22, but a long upper tail of ages ranging up to nearly 60. The mean (21.8 years) is most affected by the outliers, and the median (20 years) is probably a more useful indicator of location. The skew causes the mean to be larger than the median. The college has mostly younger students, but also some older returning and non-traditional students. Removing outliers would misrepresent the sample, by omitting those older students. They should be removed only if there is reason to examine the subgroup of younger students, perhaps aged up to about 32.
 
-## Distribution of exercise scores
+## Distribution of exercise scores {#R03-exercise-scores}
 
 Again the URL in the code book does not exist anymore but you can [download the article](https://hfjc.library.ubc.ca/index.php/HFJC/article/view/82/49) dircetly from Gaston Godin's web page.
 
@@ -396,7 +396,7 @@ s
 ```
 
 
-## Distribution of Raven scores and GPA
+## Distribution of Raven scores and GPA {#R03-raven-score-abd-gpa}
 
 > Visualize the distribution of Raven scores (Raven_Score), which are the proportion correct on a short 8-item IQ test. Next, visualize the distribution of GPA. Compare the two distributions. Why might they differ in shape?
 
@@ -422,7 +422,7 @@ s
 
 > Raven IQ Scores are relatively normally distributed. The mean is .377, median is .375, and standard deviation is .199. In contrast, GPA is very strongly negatively skewed, with scores stacked up near 4.0, the top of the GPA scale. A long tail extends down to very low values of GPA. The mean is 3.34, median is 3.40, and SD is 0.51. Different variables can have different distributions, even for the same sample. However, we expect IQ and GPA to be related, so it’s perhaps surprising that their two distributions are so different. The GPA distribution, with most of the scores concentrated in the 3.5–4.0 range, suggests that the testing is not sufficiently challenging to distinguish among students in the upper parts of the distribution. You may have heard of grade inflation occurring in the last one or two decades. Search online for “college grade inflation”, or similar, and you should easily find statistics describing a dramatic increase in the proportion of A grades in recent years, and interesting discussion about likely causes and consequences.
 
-## Presentation of the gender distribution 
+## Presentation of the gender distribution {#R03-gender-distribution}
 
 > In this data set (of the original Excel file, pb), Gender is coded as female = 1 and male = 2. ESCI calculates that the mean is _M_ = 1.28 for Gender. Does this make sense? How might you better summarize gender in this sample?
 
@@ -437,9 +437,9 @@ colnames(res) <- c('Count','%')
 res
 ```
 
-## Put some indidual scores in context
+## Put some indidual scores in context {#R03-scores-in-context}
 
-### Female student on the Ravens measure
+### Female student on the Ravens measure {#R03-ravens-measure}
 
 > One female participant achieved a score of .875 on the Raven measure. What is her z score?
 
@@ -461,7 +461,7 @@ All these commands are using vectors, e.g. the take all values of the column `ra
 scale(college_survey1$raven_score)[1]
 ```
 
-## The same student in GPA
+## The same student in GPA {#R03-gpa}
 
 > The same female participant has a GPA of 3.9. What is her _z_ score for GPA? On which
 measure (GPA or Raven) is she more unusual?
@@ -475,14 +475,14 @@ scale(college_survey1$gpa)[1]
 
 > With _X_ = 3.9, _M_ = 3.34, _s_ = 0.508, we calculate _z_ = 1.10. This participant stands out more on the IQ measure (_z_ = 2.50) than on GPA (z = 1.10).
 
-## Compare positive & negative affect of a participant
+## Compare positive & negative affect of a participant {#R03-compare-affect}
 
 > One participant scored a 2 for Positive Affect and a 2 for Negative Affect. Even though
 these raw scores are the same, they are very different within the context of the whole study. Express both as _z_ scores and percentiles. Which score is more unusual?
 
 Sorting either the column `positive_affect` or `negative_affect` we see that the particpant of row 154 is the one who scored a 2 for Positive Affect and a 2 for Negative Affect. But we should not use the direct 
 
-### Positive Affect
+### Positive Affect {#R03-positive-affect}
 
 ```{r z-score-positive-aspect}
 college_survey1$positive_affect[154]
@@ -491,7 +491,7 @@ sd(na.omit(college_survey1$positive_affect))
 scale(college_survey1$positive_affect)[154]
 ```
 
-### Negative Affect
+### Negative Affect {#R03-negative-effect}
 
 ```{r z-score-negative-aspect}
 college_survey1$negative_affect[154]
@@ -500,13 +500,13 @@ sd(na.omit(college_survey1$negative_affect))
 scale(college_survey1$negative_affect)[154]
 ```
 
-### Comparison: Positive with Negative Affect
+### Comparison: Positive with Negative Affect {#R03-comparison-positive-with-negative}
 
 > **For positive affect:** _X_ = 2.0, _M_ = 3.43, _s_ = 0.71 and we calculate _z_ = −2.01. 
 > **For negative affect:** _X_ = 2.0, _M_ = 2.32, _s_ = 0.75 and we calculate _z_ = −0.43. 
 > The positive affect score is more unusual than the negative affect score, within this sample.
 
-## Determine outliers
+## Determine outliers {#R03-determine-outliers}
 
 
 
@@ -533,11 +533,11 @@ scale(college_survey1$exercise)[138]
 > For age, _X_ = 59, _M_ = 21.8, _s_ = 5.56 and we calculate _z_ = 6.69, which is an extreme outlier! 
 > For exercise, _X_ = 1,810, _M_ = 54.8, _s_ = 135.3 and we calculate _z_ = 12.97, which is a very extreme outlier!
 
-## Religious Beliefs
+## Religious Beliefs {#R03-religious-beliefs}
 
 > Let’s look at some data about religious beliefs. The religious_belief data set on the book website has data from a large online survey in which participants were asked to report, on a scale from 0 to 100, their belief in the existence of God.
 
-### Estimate the distribution
+### Estimate the distribution {#R03-estimate-the-distribution}
 
 > First, sketch the distribution you think this variable will have. Consider the relative
 frequencies of people you expect to strongly believe in God (high end of the scale), to
@@ -551,7 +551,7 @@ The lowest 25% percent do not believe in god and the highest 25% do believe comp
 
 > I predicted an approximately flat distribution, with similar frequencies of strong, moderate, and non-believers.
 
-### Graphic of the religious data
+### Chart of the religious data {#R03-chart-religious-data}
 
 > Now make a picture of these data and describe it in words.
 
@@ -563,7 +563,7 @@ ggplot(religious_belief, aes(belief_in_gd)) +
 
 The distribution is clearly bimodal: Most respondents answered 100 (strongly believe in God) or 0 (strongly disbelieve in God), and relatively few participants gave scores between the extremes. My prediction was quite wrong. This is a good illustration of multiple peaks (two in this case) indicating distinct groups of participants.
 
-### Evaluate the different location parameters
+### Evaluate the different location parameters {#R03-evaluate-location-parameters}
 
 > Does the mean do a good job representing this data picture? Does the median? The mode?
 Why do all these measures of location seem to fail?
@@ -571,9 +571,9 @@ Why do all these measures of location seem to fail?
 > With such a strongly bimodal distribution, none of the three measures of location does a
 great job of representing the distribution. Both the mean (48.2) [49.39] and median (50) represent an intermediate level of belief that is actually rare; reporting only one mode would be misleading. The best non-graphical strategy would be to describe the distribution in words and report the location of each mode: one at 0 level of belief, the other at 100.
 
-## Working with the oiginal Excel file
+## Working with the oiginal Excel file {#R03-working-with-original-excel-file}
 
-### Load data set from Excel file
+### Load data set from Excel file {#R03-load-data-set-from-excel}
 
 In RStudio there are several options to import data files via  the menu available. I generally prefer .csv files using the option `From Text (readr)`. `readr` is a package included in `tidyverse`.
 
@@ -607,7 +607,7 @@ colnames(college1)[5] <- "School_Year"
 ```
 
 
-### Problems with the Exercise variable
+### Problems with the Exercise variable {#R03-problems-with-exercise-variable}
 
 With the Exercise variable we cannot use the above `ggplot2` commands to display the histogram. Try it out and you will get the following error message:
 
@@ -640,7 +640,7 @@ college1$Exercise_Code <- as.double(gsub(",", "", college1$Exercise_Code))
 ```
 
 
-### Problems with the Ravens_Score
+### Problems with the Ravens_Score {#R03-problems-with-ravens-score}
 
 Here we are confronted with a similar problem. The "%" sign is a character. So we have to recode this variable to get rid of the %-sign and to convert the variable to a double precise floating number. This is similar procedure as we have already done with the `Exercise` variable.
 
@@ -650,7 +650,7 @@ college1$Raven_Score_Code <- as.double(gsub("%", "", college1$Raven_Score_Code))
 ```
 
 
-### Gender data
+### Gender data {#R03-gender-data}
 
 Here I will reproduce the quote from the book
 
@@ -685,7 +685,7 @@ We have successfully converted the numeric column into a categorial variable wit
 mean(college1$Gender_Code)
 ```
 
-## Cleanup {#cleanup-03}
+## Cleanup {#R03-cleanup-03}
 
 ```{r 03-cleanup}
 

@@ -53,18 +53,18 @@ A tip for a better user experience with this video: Do not click on the 'Continu
 <iframe src="https://peter.baumgartner.name/wp-admin/admin-ajax.php?action=h5p_embed&id=94" width="960" height="1" frameborder="0" allowfullscreen="allowfullscreen"></iframe><script src="https://peter.baumgartner.name/wp-content/plugins/h5p/h5p-php-library/js/h5p-resizer.js" charset="UTF-8"></script>
 
 
-## Describing Data
+## Describing Data {#chap03-describing-data}
 
-### Aspects of Data Distributions (Fill In Dropdown)
+### Aspects of Data Distributions (Fill In Dropdown) {#chap03-data-distribution}
 
 <iframe src="https://peter.baumgartner.name/wp-admin/admin-ajax.php?action=h5p_embed&id=109" width="960" height="538" frameborder="0" allowfullscreen="allowfullscreen"></iframe><script src="https://peter.baumgartner.name/wp-content/plugins/h5p/h5p-php-library/js/h5p-resizer.js" charset="UTF-8"></script>
 
 
-### Distribution Shapes (Drag & Drop)
+### Distribution Shapes (Drag & Drop) {chap03-distribution-shapes}
 
 <iframe src="https://peter.baumgartner.name/wp-admin/admin-ajax.php?action=h5p_embed&id=106" width="960" height="929" frameborder="0" allowfullscreen="allowfullscreen"></iframe><script src="https://peter.baumgartner.name/wp-content/plugins/h5p/h5p-php-library/js/h5p-resizer.js" charset="UTF-8"></script>
 
-### Histogram & Bins (Shiny)
+### Histogram & Bins (Shiny) {chap03-histogram-shiny}
 
 <iframe src="https://pbaumgartner.shinyapps.io/histogram/" width="960" height="500" frameborder="0" allowfullscreen="allowfullscreen"></iframe><script src="https://peter.baumgartner.name/wp-content/plugins/h5p/h5p-php-library/js/h5p-resizer.js" charset="UTF-8"></script>
 
@@ -91,8 +91,6 @@ A tip for a better user experience with this video: Do not click on the 'Continu
 
 ### TODO: Assessment (Question Set) {#chap03-assessment}
 
-
-## End-of-Chapter Exercises
 
 
 

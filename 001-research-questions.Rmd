@@ -64,11 +64,11 @@ If you dont know how to use the video exercise go to the [help picture in the ap
 
 <iframe src="https://peter.baumgartner.name/wp-admin/admin-ajax.php?action=h5p_embed&id=19" width="958" height="740" frameborder="0" allowfullscreen="allowfullscreen"></iframe><script src="https://peter.baumgartner.name/wp-content/plugins/h5p/h5p-php-library/js/h5p-resizer.js" charset="UTF-8"></script>
 
-### Interactive Video
+### Interactive Video {#chap01-video-header-not-in-use}
 
 see [Video under heading of 'Interactive Video'](#chap01-video-research-questions)
 
-### Order of Steps 
+### Order of Steps {#chap01-order-of-steps}
 
 #### Research Process (Summary) {#chap01-research-process-phases-summary}
 
@@ -93,7 +93,7 @@ Integrating this exercise into this books destroys the internal linking. It seem
 <iframe src="https://pbaumgartner.shinyapps.io/itns-research-steps/#section-research-process" width="958" height="800" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
 
 
-## Meta-Analysis
+## Meta-Analysis {#chap01-meta-analysis}
 
 ### Explore Forest Plot (Image Hotspots) {#chap01-forest-plot-info-hotspots}
 
