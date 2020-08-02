@@ -139,7 +139,7 @@ There are two comments on this table:
 + Some content types have two different learning modes. The reason is that these content types are frameworks where you can put different kinds of other content types in it. For instance: An interactive video explains something (Learning 1️⃣), can offer quizzes of different type (Learning 2️⃣) and ask for a free text answer (Learning 3️⃣).
 
 
-```{r child = 'includes/progress-table.Rmd'}
+```{r child = 'includes/progress-table.md'}
 ```
 
 

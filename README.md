@@ -7,8 +7,7 @@
 + R tutorials for the end-of-chapter exercises of _itns_
 
 
-```{r child = 'includes/progress-table.Rmd'}
-```
+{{includes/progress-table.md}}
 
 
 GitHub resources of this book can be found in two places:
