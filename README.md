@@ -58,5 +58,5 @@ Parenthesises around the Shiny apps mean that a working version available but st
 | Summary                |  3/3  | 1/-   |   |   |   |   |   |   |   |    |    |    |    |    |    |    |     |
 | True/False             |  0/9  | -/-   |   |   |   |   |   |   |   |    |    |    |    |    |    |    |     |
 | shinyapps.io           |  1/-  | (2)   |   |   |   |   |   |   |   |    |    |    |    |    |    |    |     |
-| Sum                    | 23/32 | 21/40 |   |   |   |   |   |   |   |    |    |    |    |    |    |    |     |
-| Finished               | YES | YES |   |   |   |   |   |   |   |    |    |    |    |    |    |    |     |
+| **Sum**                    | **23/32** | **21/40** |   |   |   |   |   |   |   |    |    |    |    |    |    |    |     |
+| **Finished**               | **YES** | **YES** |   |   |   |   |   |   |   |    |    |    |    |    |    |    |     |
