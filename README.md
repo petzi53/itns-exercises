@@ -27,9 +27,8 @@ At the moment (July 2020) 43 exercises, 9 quizzes and some end-of-chapter exerci
 + [Histogram & Bins](https://pbaumgartner.shinyapps.io/histogram/)
 + [Picture Data (Histogram & Dotplot with Descriptive Measures)](https://pbaumgartner.shinyapps.io/picture-data/)
 
-***
 
-**Progress Table**
+# Progress Table
 
 The following table gives you an overview of the H5P content types used by different chapters. The number before the slash counts the number of H5P content types. The second number sums up the kind of exercises hidden behind frameworks like `Course Presentation`, `Interactive Video`, and `Questions Set`. 
 
